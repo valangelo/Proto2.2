@@ -1,0 +1,60 @@
+// base/_mixins.scss
+@import './variables';
+@import './typography';
+@include font-face('GloriaHallelujah', 'Gloria_Hallelujah/GloriaHallelujah-Regular');
+@mixin doodleBorder($useimage:true) {
+    
+  @if $useimage == true {
+      background-image: $image-background-crumpled-paper;
+    }
+
+    & {
+      background-color: $backgroundSecondary;
+      background-size: contain;
+      border-radius: $border-radius;
+      border-style: solid;
+      border-width: $border-width;
+      border-image: $image-border;
+      box-shadow: $shadow-large;
+    }
+  }
+  
+
+  @mixin doodleButton($useimage:true) {
+    
+    @if $useimage == true {
+        background-image: $image-background-crumpled-paper;
+      }
+  
+      & {
+        background-color: $backgroundSecondary;
+        background-size: contain;
+        border-radius: $border-radius;
+        border-style: solid;
+        border-width: $border-width;
+        border-image: $image-button;
+        box-shadow: $shadow-large;
+      }
+    }
+
+
+  @mixin highlightTags($element, $indent-level) {
+    &::before,
+    &::after {
+        color:$clr-font-400-light;
+        font-family: "GloriaHallelujah";
+        font-weight: $font-weight-normal;
+        line-height: 1.5rem;
+    }
+  
+  
+      &::before {
+        content: "<#{$element}>";
+        margin-left: calc($indent * $indent-level);
+      }
+    
+      &::after {
+        content: "</#{$element}>";
+        margin-left: calc($indent * $indent-level);
+      }
+    }

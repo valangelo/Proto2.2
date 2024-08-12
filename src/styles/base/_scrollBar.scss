@@ -1,0 +1,68 @@
+// _scrollbar.scss
+@use "./variables";
+
+:global(::-webkit-scrollbar) {
+	background-color: antiquewhite;
+	background-image: url("/src/assets/images/seamless_paper_texture.png");
+	width: 1.5rem; 
+	max-width: 2rem;
+	padding: 1em; 
+	margin: 1em; 
+}
+
+:global(::-webkit-scrollbar-button) {
+	height: 25px; 
+	width: 25px;
+	cursor: pointer;
+	&:single-button {
+		&:vertical:decrement {
+			background-image: url("#{variables.$asset-path}arrowup.svg");
+		}
+		&:vertical:increment {
+			background-image: url("#{variables.$asset-path}arrowdown.svg");
+		}
+	}
+}
+
+:global(::-webkit-scrollbar-track) {
+	border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+	background-repeat: repeat-x;
+	background-size:cover;
+	// back
+  	// background-image: url("#{variables.$asset-path}ruler.svg")
+}
+
+:global(::-webkit-scrollbar-track-piece) {
+	// background-color: red;
+}
+
+:global(::-webkit-scrollbar-thumb) {
+	cursor: pointer;
+	height: 45vh;
+	border-radius: 5rem;
+	background-image: url("#{variables.$asset-path}pencilclipart.svg");
+	background-clip: content-box;
+	background-size: 100% auto;
+	z-index: -1;
+	border: 0.2rem solid transparent;
+	box-sizing: border-box;
+}
+
+:global(::-webkit-scrollbar-corner) {
+	background: transparent;
+	width: 0;
+	height: 0;
+	border: none;
+	display: none;
+	visibility: hidden;
+	background-color: unset;
+}
+
+:global(::-webkit-resizer) {
+	display: none;
+}

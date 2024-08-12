@@ -1,0 +1,79 @@
+$font-path: "/assets/fonts/";
+
+// Define a mixin for @font-face rules
+@mixin font-face($family, $file, $weight: normal, $format: 'truetype') {
+  @font-face {
+    font-family: '#{$family}';
+    @if $format == 'truetype' {
+      src: url('#{$font-path}#{$file}.ttf') format('truetype');
+    } @else if $format == 'opentype' {
+      src: url('#{$font-path}#{$file}.otf') format('opentype');
+    } @else if $format == 'both' {
+      src: url('#{$font-path}#{$file}.ttf') format('truetype'),
+           url('#{$font-path}#{$file}.otf') format('opentype');
+    }
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+// // Define @font-face rules using the mixin
+// @include font-face('Neucha', 'Neucha/Neucha-Regular');
+// @include font-face('Amatic SC', 'Amatic_SC/AmaticSC-Regular');
+// @include font-face('Amatic SC', 'Amatic_SC/AmaticSC-Bold', bold);
+// @include font-face('Caveat', 'Caveat/static/Caveat-Regular');
+// @include font-face('Caveat', 'Caveat/static/Caveat-Bold', bold);
+// @include font-face('Caveat', 'Caveat/static/Caveat-Medium', 500);
+// @include font-face('Caveat', 'Caveat/static/Caveat-SemiBold', 600);
+// @include font-face('Caveat', 'Caveat/Caveat-VariableFont_wght', 1999);
+// @include font-face('GloriaHallelujah', 'Gloria_Hallelujah/GloriaHallelujah-Regular');
+// @include font-face('Mansalva', 'Mansalva/Mansalva-Regular');
+// @include font-face('Mynerve', 'Mynerve/Mynerve-Regular');
+// @include font-face('Pacifico', 'Pacifico/Pacifico-Regular');
+// @include font-face('Shadows into Light', 'Shadows_Into_Light/ShadowsIntoLight-Regular');
+// @include font-face('Short Stack', 'Short_Stack/ShortStack-Regular', 1999);
+// @include font-face('Roboto', 'Roboto/Roboto-Regular');
+// @include font-face('Atlandsketches', 'atlandsketches-bb/atlandsketchesbb_reg');
+// @include font-face('Freeride', 'Freeride/Freeride',normal, 'opentype');
+// @include font-face('TheUnseen', 'TheUnseen/heUnseen');
+// @include font-face('LoL', 'LoL/BeaufortforLOTL-Medium');
+// @include font-face('LifeCraft', 'LifeCraft_font/LifeCraft_Font');
+// @include font-face('horizon-font', 'horizon-font/Horizon-nMeM');
+// @include font-face('CatFont', 'CatFont/OrientalCatsLight',normal, 'opentype');
+
+// Define a mixin for font styles
+@mixin font-style($family, $weight: normal) {
+  font-family: '#{$family}', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; // System fonts as fallback
+  font-weight: $weight;
+}
+
+
+
+
+// Font Families
+
+
+// Font Sizes
+$font-size-xs: clamp(0.75rem, 0.5vw + 0.5rem, 1rem);
+$font-size-sm: clamp(0.875rem, 0.75vw + 0.5rem, 1.25rem);
+$font-size-md: clamp(1rem, 1vw + 0.5rem, 1.5rem);
+$font-size-lg: clamp(1.25rem, 1.25vw + 0.5rem, 2rem);
+$font-size-xl: clamp(1.5rem, 1.5vw + 0.5rem, 2.5rem);
+$font-size-xxl: clamp(1.75rem, 1.75vw + 0.5rem, 3rem);
+
+// Font Weights
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+
+// Heading Sizes
+$heading-size-h1: $font-size-xxl;
+$heading-size-h2: $font-size-xl;
+$heading-size-h3: $font-size-lg;
+$heading-size-h4: $font-size-md;
+$heading-size-h5: $font-size-sm;
+$heading-size-h6: $font-size-xs;
+
+
+
+

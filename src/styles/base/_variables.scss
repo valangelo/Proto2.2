@@ -1,0 +1,84 @@
+
+
+// _variables.scss
+	
+	// Asset Paths
+	$asset-path: "/src/assets/images/";
+	$image-border: url("#{$asset-path}/border.svg") 10 stretch;
+	$image-button: url("#{$asset-path}/button.svg") 10 10 10 10 stretch stretch;
+	// $image-border-button: url("#{$asset-path}button.svg") 10 stretch;
+	$image-pin: url("#{$asset-path}/pinnormal.png") stretch stretch;
+	// $image-border-border: url("#{$asset-path}border.svg") 10 stretch;
+	// $image-border-button: url("#{$asset-path}button.svg") 10 stretch;
+	$image-background:url("#{$asset-path}/seamless_paper_texture.png");
+	$ruler:url("#{$asset-path}ruler.svg");
+	$image-background-crumpled-paper:url("#{$asset-path}/kelan-Paper-texture-filter.svg");
+	// https://github.com/argyleink/open-props
+
+
+// Base Colors
+$beige: #Cb997e;
+$peach: #ddbea9;
+$cream: #ffe8d6;
+$olive: #b7b7a4;
+
+// Font Colors
+$clr-font-100:#303030;
+$clr-font-200:#2b2b2b;
+$clr-font-300:#1f1f1f;
+$clr-font-400:#1b1c1e;
+$clr-font-100-light: lighten($clr-font-100, 40%);
+$clr-font-200-light: lighten($clr-font-200, 40%);
+$clr-font-300-light: lighten($clr-font-300, 40%);
+$clr-font-400-light: lighten($clr-font-400, 40%);
+
+
+// 
+$lightGray: #666666;
+$backgroundPrimary: #ffffff;
+$backgroundSecondary: #f5f5f5;
+$borderColor: #dddddd;
+$borderShadow: rgba(0, 0, 0, 0.1);
+
+
+
+// Breakpoints
+$mobile-max: 767px;
+$tablet: 768px;
+$desktop: 992px;
+$large-desktop: 1200px;
+
+// Font Sizes
+$font-size-xs: clamp(0.75rem, 0.5vw + 0.5rem, 1rem); // Extra Small
+$font-size-sm: clamp(0.875rem, 0.75vw + 0.5rem, 1.25rem); // Small
+$font-size-md: clamp(1rem, 1vw + 0.5rem, 1.5rem); // Medium
+$font-size-lg: clamp(1.25rem, 1.25vw + 0.5rem, 2rem); // Large
+$font-size-xl: clamp(1.5rem, 1.5vw + 0.5rem, 2.5rem); // Extra Large
+$font-size-xxl: clamp(1.75rem, 1.75vw + 0.5rem, 3rem); // Extra Extra Large
+
+// Spacing
+$spacing-xs: 0.5rem;   // Extra Small
+$spacing-sm: 1rem;     // Small
+$spacing-md: 1.5rem;   // Medium
+$spacing-lg: 2rem;     // Large
+$spacing-xl: 3rem;     // Extra Large
+$spacing-xxl: 4rem;    // Extra Extra Large
+
+// Spacing Responsive
+$spacing-responsive-sm: clamp(0.5rem, 0.5vw + 0.5rem, 1rem);  // Small responsive
+$spacing-responsive-md: clamp(1rem, 1vw + 0.5rem, 1.5rem);    // Medium responsive
+$spacing-responsive-lg: clamp(1.5rem, 1.5vw + 0.5rem, 2rem);   // Large responsive
+
+// Shadow Styles
+$shadow-small: 0 1px 3px $borderShadow;    // Small shadow for subtle effects
+$shadow-medium: 0 4px 6px $borderShadow;   // Medium shadow for slightly deeper effects
+$shadow-large: 0 10px 15px $borderShadow;   // Large shadow for more pronounced depth
+
+$border-style:solid 5px;
+$border-radius:10px;
+$border-width:10px;
+
+$indent : 3ch;
+// body {
+// 	font-family: 'Nuecha';
+//   }
