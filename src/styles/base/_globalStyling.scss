@@ -59,7 +59,7 @@ image{
 
 
 body {
-    background-image: $image-background;
+    background-image: url(/src/assets/images/seamless_paper_texture.png);
     // Mobile-specific styles
     @media (max-width: var(--mobile-max)) {}
 
