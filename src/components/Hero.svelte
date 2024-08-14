@@ -48,16 +48,7 @@ $animation-duration: .3s;
 // Automatic settings
 $shadow-initial-skew: calc($initial-skew/ 2) * -1;
 $shadow-hover-skew: calc($hover-skew/ 2) * -1;
-  // background-color: red;
-  // width: 500px; // Adjust the size as needed
-  // height: 500px;
-  
 
-    // @import '../styles/main.scss';
-    @import 'base/mixins';
-    @import 'base/typography';
-    @import 'base/variables';
-  
     section{
       @include highlightTags('section', 2,);
       &{
@@ -140,26 +131,13 @@ $shadow-hover-skew: calc($hover-skew/ 2) * -1;
     // background-repeat: no-repeat;
     // background-size: contain; 
     // background-position: center;
-    fill: white;
-    &::before{
-      z-index: 1;
-      content: '';
-      left:-1px;
-      background-image: url('../assets/images/figure.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      transform-origin: left top;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      transform: skew(10deg,10deg);
-      transition: all ease-out $animation-duration;
-  }
+    // fill: red;
+    
+    
   img{
     height: 100%;
     width: 100%;
-    filter: invert(100%);
+    filter:hue-rotate();
     z-index: -3;
   }
 }

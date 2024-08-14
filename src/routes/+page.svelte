@@ -17,16 +17,16 @@
 
 <style lang="scss"> 
     
-    @import 'base/scrollBar';
-    @import 'base/mixins';
-    @import 'base/typography';
+    // @import 'base/scrollBar';
+    // @import 'base/typography';
     // @import 'base/variables';
+    // @import 'base/mixins';
     .fakeHtmlContainer {
     padding: 10px;
-    @include highlightTags('html', 0,);
+    // @include highlightTags('html', 0,);
     }
     .fakeBodyContainer {
-    @include highlightTags('body', 1,);
+    // @include highlightTags('body', 1,);
     }
 
 </style>

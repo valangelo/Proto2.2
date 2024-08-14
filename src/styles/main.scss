@@ -1,6 +1,8 @@
 // src/styles/main.scss
+// reset
 @import 'base/reset';
 @import 'base/variables';
-@import 'base/typography';
-@import 'base/globalstyling';
-@import 'base/mixins';
+/* GlobalStyling */
+@import 'base/globalStyling';
+/* Scrollbar */
+@import 'base/scrollBar';

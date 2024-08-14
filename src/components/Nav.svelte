@@ -20,10 +20,7 @@
 </script>
 
 <style lang="scss">
-  @import 'base/mixins';
-  @import 'base/typography';
-  @import 'base/variables';
-
+  
   div {
     @include highlightTags('nav', 2);
   }

@@ -6,11 +6,6 @@
 </script>
 
 <style lang="scss">
-    // @import '../styles/main.scss';
-    @import 'base/mixins';
-    @import 'base/typography';
-    @import 'base/variables';
-
     @include font-face('Neucha', 'Neucha/Neucha-Regular');
     @include font-face('Caveat', 'Caveat/static/Caveat-Regular');
     @include font-face('Mansalva', 'Mansalva/Mansalva-Regular');
@@ -115,9 +110,13 @@
     font-family: 'Catfont';
     font-weight: $font-weight-bolder;
   }
+  a{
+    cursor: pointer;
+    text-decoration: none;
+  }
   </style>
 <div class="containerAboutHim">
-  <section>
+  <section id="about">
     <div>
       <h2>Greetings, Earthinlings!</h2>
       <h3>Meet the one and only: <span>Angelo!</span></h3>

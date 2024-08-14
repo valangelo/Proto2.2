@@ -1,6 +1,4 @@
 // base/_mixins.scss
-@import './variables';
-@import './typography';
 @include font-face('GloriaHallelujah', 'Gloria_Hallelujah/GloriaHallelujah-Regular');
 @mixin doodleBorder($useimage:true) {
     
@@ -10,7 +8,7 @@
 
     & {
       background-color: $backgroundSecondary;
-      background-size: contain;
+      background-size: cover;
       border-radius: $border-radius;
       border-style: solid;
       border-width: $border-width;

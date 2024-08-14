@@ -5,9 +5,7 @@
 </script>
 
 <style lang="scss">
-  @import '../styles/base/variables';
-  @import '../styles/base/mixins';
-
+  
   .nav__branding {
     display: flex;
     align-items: center;

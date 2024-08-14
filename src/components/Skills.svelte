@@ -1,19 +1,11 @@
 <style lang="scss">
-    // @import '../styles/main.scss';
-    @import 'base/mixins';
-    @import 'base/typography';
-    @import 'base/variables';
+    
     .containerSkills{
     @include highlightTags('section', 2,);
   }
   section{
     display: flex;
     flex-wrap: wrap;
-    // mask: url(../asssets/images/border-svg.png);
-    // mask-size: cover;
-    // -webkit-mask: url(../assets/images/border-mask.webp);
-    // -webkit-mask-size:cover;
-    // -webkit-mask-repeat: no-repeat;
     
     margin-inline:calc($indent * 3);
     padding: 1.5rem;
@@ -31,7 +23,7 @@
 
 <!-- HTML -->
 <div  class="containerSkills">
-  <section>
+  <section id="skills">
     <div>
       <h2>Frontend Development & Design</h2>
       <ul>
