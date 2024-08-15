@@ -45,7 +45,7 @@
     // -webkit-mask-size:cover;
     // -webkit-mask-repeat: no-repeat;
     line-height: 2rem;
-    margin-inline:calc($indent * 3);
+    margin-inline:calc($indent * 2);
     padding: 1.5rem;
     justify-content: space-between;
     @include doodleBorder;

@@ -1,8 +1,12 @@
 /* _scrollbar.scss */
 
+
+// src/styles/base/_scrollBar.scss
+@debug $asset-path; // Check if this prints the correct path
+
 ::-webkit-scrollbar {
 	background-color: antiquewhite;
-	background-image: url("/src/assets/images/seamless_paper_texture.png");
+	background-image: url("#{$asset-path}seamless_paper_texture.png");
 	width: 1.5rem; 
 	max-width: 2rem;
 	padding: 1em; 

@@ -40,7 +40,7 @@
 }
 
 footer {
-    @include doodleBorder(true);
+    @include doodleBorder;
     & {
     display: grid;
     text-align: center;

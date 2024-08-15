@@ -1,3 +1,5 @@
+// svelte.config.js
+
 import adapter from '@sveltejs/adapter-auto';
 import sveltePreprocess from 'svelte-preprocess';
 
@@ -5,14 +7,14 @@ import sveltePreprocess from 'svelte-preprocess';
 const config = {
     preprocess: sveltePreprocess({
         scss: {
-            includePaths: ['src/styles'], // Adjust the path as necessary
+            includePaths: ['src/styles'], 
             prependData:
                 `
-                @import 'src/styles/base/variables';
-                @import 'src/styles/base/typography';
-                @import 'src/styles/base/mixins';
+                @import 'base/variables';
+                @import 'base/typography';
+                @import 'base/mixins';
                 `
-          },
+        },
     }),
 
     kit: {

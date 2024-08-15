@@ -1,14 +1,21 @@
 // base/_mixins.scss
 @include font-face('GloriaHallelujah', 'Gloria_Hallelujah/GloriaHallelujah-Regular');
-@mixin doodleBorder($useimage:true) {
+@mixin doodleBorder($backgroundImage:1) {
     
-  @if $useimage == true {
+  
+
+    @if $backgroundImage==1{
       background-image: $image-background-crumpled-paper;
     }
+    @if $backgroundImage==2{
+      background-image: $image-background;
+    }
+    @else {
+      background-image: $backgroundImage;
+    }
+  
 
     & {
-      background-color: $backgroundSecondary;
-      background-size: cover;
       border-radius: $border-radius;
       border-style: solid;
       border-width: $border-width;

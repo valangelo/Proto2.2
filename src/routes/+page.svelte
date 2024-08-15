@@ -1,6 +1,4 @@
 <!-- /routes/+page.svelte -->
-
-
 <script>
 
     import Nav from '../components/Nav.svelte';
@@ -9,24 +7,17 @@
     import Skills from '../components/Skills.svelte';
     import Projects from '../components/Projects.svelte';
     import Footer from '../components/Footer.svelte';
-    // Style
-    // import '../styles/main.scss'
-    // import '../styles/components/proto2.1/proto2.1.scss'
-    // import '../styles/base/_mixins.scss';
+
 </script>
 
 <style lang="scss"> 
     
-    // @import 'base/scrollBar';
-    // @import 'base/typography';
-    // @import 'base/variables';
-    // @import 'base/mixins';
     .fakeHtmlContainer {
     padding: 10px;
-    // @include highlightTags('html', 0,);
+    @include highlightTags('html', 0,);
     }
     .fakeBodyContainer {
-    // @include highlightTags('body', 1,);
+    @include highlightTags('body', 1,);
     }
 
 </style>

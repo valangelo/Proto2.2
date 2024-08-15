@@ -11,8 +11,6 @@ $black: #000;
   $white: hsl(61, 67%, 88%);
   $shadow: rgba(0, 0, 0, 0.1);
   $px: 7px;
-
-
   $bubble-border: 0 -1*$px $white,
   0 -2*$px $black,
   $px 0 $white,
@@ -50,9 +48,9 @@ $shadow-initial-skew: calc($initial-skew/ 2) * -1;
 $shadow-hover-skew: calc($hover-skew/ 2) * -1;
 
     section{
-      @include highlightTags('section', 2,);
+      @include highlightTags('section', 1,);
       &{
-        margin-inline:calc($indent * 2);
+        margin-inline:calc($indent * 1);
       justify-content: space-between;
     }
     
