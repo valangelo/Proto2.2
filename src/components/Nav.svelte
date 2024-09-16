@@ -22,20 +22,22 @@
 <style lang="scss">
   
   div {
+
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     @include highlightTags('nav', 2);
   }
 
   nav {
-    display: flex;
-    margin-inline: calc($indent * 3);
-    justify-content: space-between;
-    align-items: center;
-    @include doodleBorder;
+    @include doodleBorder(1);
+    &{
+      display: flex;
+      margin-inline: calc($indent * 3);
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
-  // .nav__links {
-  //   display: none;
-  // }
+  
 
   // .nav__links.open {
   //   display: flex;

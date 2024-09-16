@@ -4,15 +4,15 @@
 	
 	// Asset Paths
 	$asset-path: "/src/assets/images/";
-	$image-border: url("#{$asset-path}/border.svg") 10 stretch;
-	$image-button: url("#{$asset-path}/button.svg") 10 10 10 10 stretch stretch;
+	$image-border: url("#{$asset-path}border.svg") 10 stretch;
+	$image-button: url("#{$asset-path}button.svg") 10 10 10 10 stretch stretch;
 	// $image-border-button: url("#{$asset-path}button.svg") 10 stretch;
-	$image-pin: url("#{$asset-path}/pinnormal.png") stretch stretch;
+	$image-pin: url("#{$asset-path}pinnormal.png") stretch stretch;
 	// $image-border-border: url("#{$asset-path}border.svg") 10 stretch;
 	// $image-border-button: url("#{$asset-path}button.svg") 10 stretch;
-	$image-background:url("#{$asset-path}/seamless_paper_texture.png"); 
+	$image-background:url("#{$asset-path}seamless_paper_texture.png"); 
 	$ruler:url("#{$asset-path}ruler.svg");
-	$image-background-crumpled-paper:url("#{$asset-path}/kelan-Paper-texture-filter.svg");
+	$image-background-crumpled-paper:url("#{$asset-path}kelan-Paper-texture-filter.svg");
 	// https://github.com/argyleink/open-props
 
 
@@ -35,7 +35,7 @@ $clr-font-400-light: lighten($clr-font-400, 40%);
 
 // 
 $lightGray: #666666;
-$backgroundPrimary: #ffffff;
+$backgroundPrimary: hsl(0, 0%, 95%);
 $backgroundSecondary: #f5f5f5;
 $borderColor: #dddddd;
 $borderShadow: rgba(0, 0, 0, 0.1);
@@ -82,3 +82,56 @@ $indent : 3ch;
 // body {
 // 	font-family: 'Nuecha';
 //   }
+
+
+
+@keyframes float {
+	0% {
+	  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+	  transform: translateY(0px);
+	}
+	15% {
+	  filter: drop-shadow(0 6px 2px rgba(0, 0, 0, 0.2));
+	  transform: translateY(-4px);
+	}
+	30% {
+	  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+	  transform: translateY(0px);
+	}
+	45% {
+	  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+	  transform: translateY(0px);
+	}
+	70% {
+	  filter: drop-shadow(0 7px 1px rgba(0, 0, 0, 0.2));
+	  transform: translateY(-4px);
+	}
+	100% {
+	  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+	  transform: translateY(0px);
+	}
+  }
+  @keyframes hinge {
+	0% {
+	  animation-timing-function: ease-in-out;
+	}
+  
+	20%,
+	60% {
+	  transform: rotate3d(0, 0, 1, 80deg);
+	  animation-timing-function: ease-in-out;
+	}
+  
+	40%,
+	80% {
+	  transform: rotate3d(0, 0, 1, 60deg);
+	  animation-timing-function: ease-in-out;
+	  opacity: 1;
+	}
+  
+	to {
+	  transform: translate3d(0, 700px, 0);
+	  opacity: 0;
+	}
+  }
+  

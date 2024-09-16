@@ -36,28 +36,35 @@
     @include highlightTags('section', 2,);
   }
   section{
-    display: flex;
-    font-family: 'Neucha';
-    font-size: $font-size-md;
     // mask: url(../asssets/images/border-svg.png);
     // mask-size: cover;
     // -webkit-mask: url(../assets/images/border-mask.webp);
     // -webkit-mask-size:cover;
     // -webkit-mask-repeat: no-repeat;
-    line-height: 2rem;
-    margin-inline:calc($indent * 2);
-    padding: 1.5rem;
-    justify-content: space-between;
-    @include doodleBorder;
+    @include doodleBorder(1);
+    &{
+      filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+      display: flex;
+      font-family: 'Neucha';
+      font-size: $font-size-md;
+      line-height: 2rem;
+      margin-inline:calc($indent * 2);
+      padding: 1.5rem;
+      justify-content: space-between;
+
+    }
+  }
+  span{
+    filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.2));
   }
   .valiw img{
     width: 20rem;
+    animation: float 7s ease-in-out infinite;
   }
-
   h2{
     line-height: $spacing-xxl;
     font-size: $font-size-xxl;
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-bold;
     font-family: 'Mynerve';
   }
   h3 span{
@@ -88,6 +95,7 @@
   }
   .wotlk {
   font-family: 'LifeCraft';
+  font-size: $font-size-sm;
   @include icon('../assets/images/horde.png');
   }
 
@@ -118,7 +126,7 @@
 <div class="containerAboutHim">
   <section id="about">
     <div>
-      <h2>Greetings, Earthinlings!</h2>
+      <h2>Greetings, Earthlings!</h2>
       <h3>Meet the one and only: <span>Angelo!</span></h3>
       <h4>Primary Functions</h4>
       <ul>

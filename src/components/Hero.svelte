@@ -1,12 +1,13 @@
 <!-- src/components/Hero.svelte -->
 <script>
-import proto from '../assets/images/figure.svg';
+import proto from '../assets/images/proto2.2.svg';
 
 </script>
 
 <style lang="scss">
-
-
+@include font-face('Mynerve', 'Mynerve/Mynerve-Regular');
+@include font-face('Caveat', 'Caveat/static/Caveat-Medium', 500);
+@include font-face('Neucha', 'Neucha/Neucha-Regular');
 $black: #000;
   $white: hsl(61, 67%, 88%);
   $shadow: rgba(0, 0, 0, 0.1);
@@ -23,8 +24,6 @@ $black: #000;
   -2*$px 0 $black,
   -1*$px -1*$px $black,
   $px $px $black;
-
-
 
 
      // Brownish
@@ -94,21 +93,33 @@ $shadow-hover-skew: calc($hover-skew/ 2) * -1;
   justify-content: center;
 
   h2{
+    font-family: 'Mynerve';
+    font-weight: $font-weight-bold;
     font-size: $font-size-xxl;
     line-height: 3rem;
     span{
-      font-weight: bold;
+      font-weight:$font-weight-bolder;
     }
   }
   h3{
-    font-size: $font-size-lg;
+    font-family: 'Caveat';
+    font-size: $font-size-xl;
     line-height: 5rem;
+    font-weight: $font-weight-normal;
   }
   p{
-    font-size: $font-size-sm;
+    font-family: 'Neucha';
+    font-size: $font-size-md;
     line-height: 2rem;
   }
 }
+
+
+
+
+
+
+
 
 
 .hero_containerImage{
@@ -131,8 +142,9 @@ $shadow-hover-skew: calc($hover-skew/ 2) * -1;
     // background-position: center;
     // fill: red;
     
-    
-  img{
+    img{
+    animation: float 7s ease-in-out infinite;
+    transform: translatey(0px);
     height: 100%;
     width: 100%;
     filter:hue-rotate();
@@ -196,7 +208,7 @@ $shadow-hover-skew: calc($hover-skew/ 2) * -1;
 <section >
   <div class="heroContainer">
     <div class="hero_containerText">
-      <h2>Hey there, Stranger! I'm <span>Proto</span>,</h2>
+      <h2>Hey there, Stranger! I'm <span>PROTO</span>,</h2>
       <h3>The Cute, Quirky Companion of My Creator's Portfolio.</h3>
       <p>Explore the creations and projects he has crafted.</p>
       <p>It's an ongoing journey, and there's plenty of exciting stuff to see.</p>

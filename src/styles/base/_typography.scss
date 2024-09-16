@@ -61,7 +61,8 @@ $font-size-xl: clamp(1.5rem, 1.5vw + 0.5rem, 2.5rem);
 $font-size-xxl: clamp(1.75rem, 1.75vw + 0.5rem, 3rem);
 
 // Font Weights
-$font-weight-normal: 400;
+$font-weight-light: 400;
+$font-weight-normal: 500;
 $font-weight-bold: 700;
 $font-weight-bolder: 900;
 

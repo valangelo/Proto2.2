@@ -5,20 +5,26 @@
 </script>
 
 <style lang="scss">
-  
+  @include font-face('Mynerve', 'Mynerve/Mynerve-Regular');
   .nav__branding {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
     @include doodleButton(false);
+    &{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+      background-color: $backgroundPrimary;
+    }
   }
 
+ 
   .nav__branding img {
     width: 5rem;
   }
 
   h1 {
+    font-family: 'Mynerve';
     font-size: $font-size-xxl;
   }
 </style>

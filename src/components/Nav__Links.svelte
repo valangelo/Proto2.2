@@ -9,6 +9,7 @@
 </script>
 
 <style lang="scss">
+  @include font-face('Shadows into Light', 'Shadows_Into_Light/ShadowsIntoLight-Regular');
   .links {
     display: flex;
     gap: 1rem;
@@ -20,7 +21,7 @@
     min-width: 50px;
     width: auto;
     font-size: $font-size-xxl;
-    // font-size: 99rem;
+    font-family: 'Shadows into Light';
     padding: 0.75rem;
     color: $clr-font-200;
     align-self: center;

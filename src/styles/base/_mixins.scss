@@ -1,65 +1,66 @@
-// base/_mixins.scss
 @include font-face('GloriaHallelujah', 'Gloria_Hallelujah/GloriaHallelujah-Regular');
-@mixin doodleBorder($backgroundImage:1) {
-    
-  
 
-    @if $backgroundImage==1{
+@mixin doodleBorder($backgroundImage: 0) {
+  // Moving the background declaration inside an `& {}` block
+  @if $backgroundImage == 1 {
+    & {
       background-image: $image-background-crumpled-paper;
     }
-    @if $backgroundImage==2{
+  }
+  @else if $backgroundImage == 2 {
+    & {
       background-image: $image-background;
     }
-    @else {
-      background-image: $backgroundImage;
-    }
-  
-
+  }
+  @else {
     & {
-      border-radius: $border-radius;
-      border-style: solid;
-      border-width: $border-width;
-      border-image: $image-border;
-      box-shadow: $shadow-large;
+      background-image: none;
     }
   }
-  
 
-  @mixin doodleButton($useimage:true) {
-    
-    @if $useimage == true {
-        background-image: $image-background-crumpled-paper;
-      }
-  
-      & {
-        background-color: $backgroundSecondary;
-        background-size: contain;
-        border-radius: $border-radius;
-        border-style: solid;
-        border-width: $border-width;
-        border-image: $image-button;
-        box-shadow: $shadow-large;
-      }
-    }
+  & {
+    border-radius: $border-radius;
+    border-style: solid;
+    border-width: $border-width;
+    border-image: $image-border;
+    box-shadow: $shadow-large;
+  }
+}
 
+@mixin doodleButton($useimage: true) {
+  @if $useimage == true {
+    & {
+      background-image: $image-background-crumpled-paper;
+    }
+  }
 
-  @mixin highlightTags($element, $indent-level) {
-    &::before,
-    &::after {
-        color:$clr-font-400-light;
-        font-family: "GloriaHallelujah";
-        font-weight: $font-weight-normal;
-        line-height: 1.5rem;
-    }
-  
-  
-      &::before {
-        content: "<#{$element}>";
-        margin-left: calc($indent * $indent-level);
-      }
-    
-      &::after {
-        content: "</#{$element}>";
-        margin-left: calc($indent * $indent-level);
-      }
-    }
+  & {
+    background-color: $backgroundSecondary;
+    background-size: contain;
+    border-radius: $border-radius;
+    border-style: solid;
+    border-width: $border-width;
+    border-image: $image-button;
+    box-shadow: $shadow-large;
+  }
+}
+
+@mixin highlightTags($element, $indent-level) {
+  &::before,
+  &::after {
+    color: $clr-font-400-light;
+    font-family: "GloriaHallelujah";
+    font-weight: $font-weight-normal;
+    line-height: 1.5rem;
+  }
+
+  &::before {
+    content: "<#{$element}>";
+    margin-left: calc($indent * $indent-level);
+  }
+
+  &::after {
+    content: "</#{$element}>";
+    margin-left: calc($indent * $indent-level);
+  }
+}

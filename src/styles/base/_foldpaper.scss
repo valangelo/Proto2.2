@@ -1,0 +1,29 @@
+
+&::after {
+    --paper-color: hsla(30, 100%, 96%, 0.897);
+    --paper-dark: hsla(0, 0%, 50%, 0.205);
+    --shadow-size: 3px;
+    --transparent: hsla(222, 74%, 91%, 0.116);
+      content: "";
+      display: flex;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+    background: linear-gradient(
+        var(--transparent),
+        50%,
+        var(--paper-dark),
+        51%,
+        var(--transparent)
+      ),
+      linear-gradient(
+        to right,
+        var(--transparent),
+        50%,
+        var(--paper-dark),
+        51%,
+        var(--transparent)
+        );
+  }

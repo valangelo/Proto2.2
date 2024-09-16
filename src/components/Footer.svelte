@@ -42,6 +42,7 @@
 footer {
     @include doodleBorder;
     & {
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     display: grid;
     text-align: center;
     grid-template-columns: auto auto auto;
@@ -63,6 +64,7 @@ footer {
     }
     img{
         height: 10rem;
+        animation: float 7s ease-in-out infinite;
     }
     p{
         font-family: "Neucha";
