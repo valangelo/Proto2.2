@@ -41,9 +41,9 @@
       background: GawarangBG,
       url: "https://proto2-2.vercel.app/",
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
+        "This is a personal project: a custom-designed, hand-coded blog and portfolio website for my girlfriend.",
       backstory:
-        "Gawarang was developed as part of a collaborative project with a team of designers and developers. It focuses on showcasing innovative designs and interactive features, pushing the boundaries of web development.",
+        "This is a personal project: a custom-designed, hand-coded blog and portfolio website for my girlfriend.",
     },
     {
       id: "proto10Dialog",
