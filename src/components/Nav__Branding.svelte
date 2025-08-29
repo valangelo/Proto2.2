@@ -17,18 +17,16 @@
       background-color: $backgroundPrimary;
     }
   }
-
- 
   .nav__branding img {
     width: 5rem;
   }
-
   h1 {
     font-family: 'Mynerve';
     font-size: $font-size-xxl;
   }
 </style>
 
+<!-- Nav Branding  -->
 <div class={className}>
   {#if logoUrl}
     <img src={logoUrl} alt="Logo" />

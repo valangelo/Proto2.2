@@ -163,7 +163,7 @@ footer {
             
         </div>
         <div class="copyright">
-            <p>©<span id="current-year">2024</span>
+            <p>©<span id="current-year">2025</span>
                 All Rights Reserved by
                 <a href="#home">Val Angelo Valencia</a>.</p>
         </div>

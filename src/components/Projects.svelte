@@ -9,27 +9,36 @@
     description: string;
     backstory: string;
   }
+  import PitikElliot from '/src/assets/images/pitikElliot.svg'
+  import Gawarang from '/src/assets/images/gawarang.svg'
+  import GawarangBG from '/src/assets/images/gawarangbg.jpg'
+  import figure from '/src/assets/images/figure.svg'
+  import proto2 from  '/src/assets/images/proto2.2.svg'
   const projects: Project[] = [
     {
       id: "pitikCatsDialog",
       title: "PitikCats",
-      image: "./src/assets/images/pitikElliot.svg",
-      background: "./src/assets/images/pitikElliot.svg",
-      url: "google.com",
+      image: PitikElliot,
+      background: PitikElliot,
+      url: "https://pitikcats.vercel.app/",
       description:
         '"PitikCats" is a personal webpage where I share photos of cats and dogs I encounter during my daily walks. Each photo captures unique moments in their everyday lives, highlighting the beauty in the ordinary.',
       backstory: `
       <div class="test">
-      <h1>PitikCats</h1>
-      <p>was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life. PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life.PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life. PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life.PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life. PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life.PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life. PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life.PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life. PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life.PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life. PitikCats was created as a personal project to document and share the beauty of everyday moments with animals. It was inspired by my love for photography and my interest in capturing the ordinary details of life.</p>
+      <p>
+        PitikCats is my personal project where I share random pictures of street cats. I love taking photos of cats I come across while out and about, capturing their everyday moments. This site is a simple space to share those snapshots and celebrate the charm of these furry wanderers.
+      </p>
+      <p>
+      Let me know if this works or needs adjustments!
+      </p>
       </div>`,
     },
 
     {
       id: "gawarangDialog",
       title: "Gawarang",
-      image: "./src/assets/images/gawarang.svg",
-      background: "./src/assets/images/gawarangbg.jpg",
+      image: Gawarang,
+      background: GawarangBG,
       url: "google.com",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
@@ -38,25 +47,28 @@
     },
     {
       id: "proto10Dialog",
-      title: "Proto1.0",
-      image: "./src/assets/images/figure.svg",
-      background: "./src/assets/images/proto1bg.png",
-      url: "google.com",
+      title: "Proto1.2",
+      image: figure,
+      background: figure,
+      url: "https://proto1-2.vercel.app/",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
       backstory:
-        "Proto1.0 was my first major portfolio project developed during a coding bootcamp. It was designed to showcase my skills and was awarded the certificate for the best capstone project, marking a significant milestone in my career.",
+        "Proto1.2 was my first major portfolio project developed during a coding bootcamp. It was designed to showcase my skills and was awarded the certificate for the best capstone project, marking a significant milestone in my career.",
     },
     {
       id: "proto22Dialog",
       title: "Proto2.2",
       url: "google.com",
-      image: "./src/assets/images/proto2.2.svg",
-      background: "./src/assets/images/pitikElliot.svg",
+      image: proto2,
+      background: figure,
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
       backstory:
-        "Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft.",
+        `Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft
+        Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft
+        Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft
+        Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft`,
     },
   ];
 
@@ -147,8 +159,9 @@
     <!--cards-->
   </section>
 </div>
-
+<!-- MARK: style -->
 <style lang="scss">
+
   @include font-face("Neucha", "Neucha/Neucha-Regular");
   .containerProjects {
     @include highlightTags("section", 2);
@@ -281,7 +294,7 @@
       // align-items: center;
       padding-bottom: 5rem;
     }
-    
+
     .dialogButtonscontainer {
 
       position: absolute;

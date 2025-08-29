@@ -1,32 +1,41 @@
 <script>
-  export let name;
-  export let className;
-  export let iconUrl;
+    export let name;
+    export let className;
+    export let iconUrl;
 </script>
 
 <li class={className} style={`--icon-url: url('${iconUrl}');`}>
-  {name}
+    {name}
 </li>
 
 <style lang="scss">
-  li {
-    position: relative;
-    padding-left: 40px; /* Space for the custom marker */
-    margin-bottom: 10px;
-    list-style-type: none; /* Remove default bullets */
-  }
+    li {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
 
-  li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 20px; /* Width of the custom marker */
-    height: 20px; /* Height of the custom marker */
-    background-image: var(--icon-url);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translateY(-50%);
-  }
+    li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        background-image: var(--icon-url);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(-50%);
+        filter: contrast(30%) brightness(90%);
+    }
+    li:hover::before {
+        filter: contrast(70%) brightness(100%)
+            drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
+        transform: translateY(-50%) scale(1.1);
+        transition:
+            filter 0.3s ease,
+            transform 0.3s ease;
+    }
 </style>

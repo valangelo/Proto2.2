@@ -4,7 +4,6 @@
     text: string;
     location: string;
   }>;
-
   export let isOpen: boolean;
 </script>
 

@@ -1,42 +1,59 @@
-<script lang=ts>
+<script lang="ts">
+  import Skill from './Skills_li.svelte';
+  
+  // Import SVG icons
+  const urls = import.meta.glob("./src/assets/images/icons/**/*.{png,svg}", { eager: true }) as Record<string, { default: string }>;
 
-import Skill from './Skills_li.svelte';
-
-
-const path = './src/assets/images/icons/';
-
-const frontendSkills = [
-  { name: 'HTML5',               className: 'frontend-html5',      iconUrl: `${path}html5.svg` },
-  { name: 'CSS/SCSS',            className: 'frontend-css',        iconUrl: `${path}sass.svg` },
-  { name: 'JavaScript',          className: 'frontend-js',         iconUrl: `${path}javascript.svg` },
-  { name: 'React',               className: 'frontend-react',      iconUrl: `${path}react.svg` },
-  { name: 'Svelte/SvelteKit',    className: 'frontend-svelte',     iconUrl: `${path}svelte.svg` },
-  { name: 'Bootstrap',           className: 'frontend-bootstrap',  iconUrl: `${path}bootstrap.svg` },
-  { name: 'WordPress',           className: 'frontend-wordpress',  iconUrl: `${path}wordpress.svg` }
-];
-
-const backendSkills = [
-  { name: 'NodeJS',              className: 'backend-nodejs',      iconUrl: `${path}nodeJs.svg` },
-  { name: 'Express.JS',          className: 'backend-express',     iconUrl: `${path}expressJs.svg` },        
-  { name: 'SQL (MySQL, SQLite)', className: 'backend-sql',         iconUrl: `${path}sql.svg` },
-  { name: 'NoSQL',               className: 'backend-nosql',       iconUrl: `${path}nosql.svg` },
-  { name: 'PHP',                 className: 'backend-php',         iconUrl: `${path}php.svg` }
-];
-
-const toolsAndSoftware = [
-  { name: 'Adobe Photoshop',     className: 'tools-photoshop',     iconUrl: `${path}photoshop.svg` },
-  { name: 'SketchUp',            className: 'tools-sketchup',      iconUrl: `${path}sketchUp.svg` },
-  { name: 'Darktable',           className: 'tools-darktable',     iconUrl: `${path}darktable.svg` }
-];
-
-const developmentTools = [
-  { name: 'Microsoft Visual Studio', className: 'devtools-visualstudio', iconUrl: `${path}visualStudio.svg` },
-  { name: 'Git',                     className: 'devtools-git',          iconUrl: `${path}git.svg` },
-  { name: 'GitHub',                  className: 'devtools-github',       iconUrl: `${path}github.svg` },
-  { name: 'GitLab',                  className: 'devtools-gitlab',       iconUrl: `${path}gitlab.svg` },
-  { name: 'VB.NET',                  className: 'devtools-vbnet',        iconUrl: `${path}VBNet.svg` },
-  { name: 'Visual Basic',            className: 'devtools-vbbasic',      iconUrl: `${path}visualBasic.svg` }
-];
+  const path = './src/assets/images/icons/';
+  const icons = Object.fromEntries(
+  Object.entries(urls).map(([path, module]) => [path.split('/').pop(), module.default])
+);
+  // Skills Arrays
+  let frontendSkills = [
+    { name: 'HTML5',              className: 'frontend-html5',    iconName: `${path}html5.svg` },
+    { name: 'CSS/SCSS',           className: 'frontend-css',      iconName: `${path}sass.svg`},  
+    { name: 'JavaScript',         className: 'frontend-js',       iconName: `${path}javascript.svg` },
+    { name: 'React',              className: 'frontend-react',    iconName: `${path}react.svg` },
+    { name: 'Svelte/SvelteKit',   className: 'frontend-svelte',   iconName: `${path}svelte.svg` },
+    { name: 'Bootstrap',          className: 'frontend-bootstrap',iconName: `${path}bootstrap.svg` },
+    { name: 'WordPress',          className: 'frontend-wordpress',iconName: `${path}wordpress.svg` }
+  ].map(skill => ({
+    ...skill,
+    iconUrl: skill.iconName && icons[skill.iconName] ? icons[skill.iconName] : null,
+  }));
+  
+  let backendSkills = [
+    { name: 'NodeJS',             className: 'backend-nodejs',    iconName: `${path}nodeJs.svg` },
+    { name: 'Express.JS',         className: 'backend-express',   iconName: `${path}expressJs.svg` },
+    { name: 'SQL (MySQL, SQLite)',className: 'backend-sql',       iconName: `${path}sql.svg` },
+    { name: 'NoSQL',              className: 'backend-nosql',     iconName: `${path}nosql.svg` },
+    { name: 'PHP',                className: 'backend-php',       iconName: `${path}php.svg` }
+  ].map(skill => ({
+    ...skill,
+    iconUrl: skill.iconName && icons[skill.iconName] ? icons[skill.iconName] : null,
+  }));
+  
+  let toolsAndSoftware = [
+    { name: 'Adobe Photoshop',    className: 'tools-photoshop',   iconName: `${path}photoshop.svg` },
+    { name: 'SketchUp',           className: 'tools-sketchup',    iconName: `${path}sketchUp.svg` },
+    { name: 'Darktable',          className: 'tools-darktable',   iconName: `${path}darktable.svg` }
+  ].map(skill => ({
+    ...skill,
+    iconUrl: skill.iconName && icons[skill.iconName] ? icons[skill.iconName] : null,
+  }));
+  
+  let developmentTools = [
+    { name: 'Microsoft Visual Studio',  className: 'devtools-visualstudio', iconName: `${path}visualStudio.svg` },
+    { name: 'Git',                      className: 'devtools-git',          iconName: `${path}git.svg` },
+    { name: 'GitHub',                   className: 'devtools-github',       iconName: `${path}github.svg` },
+    { name: 'GitLab',                   className: 'devtools-gitlab',       iconName: `${path}gitlab.svg` },
+    { name: 'VB.NET',                   className: 'devtools-vbnet',        iconName: `${path}VBNet.svg` },
+    { name: 'Visual Basic',             className: 'devtools-vbbasic',      iconName: `${path}visualBasic.svg` }
+  ].map(skill => ({
+    ...skill,
+    iconUrl: skill.iconName ? `${path}${skill.iconName}` : null
+  }));
+  
 
 </script>
 
@@ -109,38 +126,12 @@ const developmentTools = [
       calc(100% - var(--c)) 100%,
       0 100%);
       
-      ul{
-        list-style-type: none;
-        font-size: $font-size-md;
-        font-family: 'Neucha';  
-        color:$clr-font-100;
-      }
+
       h2{
         line-height: 3rem;
         font-family: 'Caveat';  
       }
-      li{
-        // asdasd
-        // color:red;
-      }
-      //     padding-left: 1rem ;
-      //     cursor: pointer;
-      //     position: relative;
-      //     &::before{
-        //       content: '';
-        //     // background-color: red;
-        //   position: absolute;
-        //   left: -1rem;
-        //   top: 0;
-        //   width: 20px; /* Width of the custom marker */
-        //   height: 20px; /* Height of the custom marker */
-        //   background-image: url('../assets/images/arrowdown.svg'); /* Path to your custom icon */
-        //   background-size: contain; /* Adjust if necessary */
-        //   background-repeat: no-repeat;
-        //   background-position: center;
-        //   transform: translateY(-50%); /* Center the marker vertically */
-        //   }
-        // }
+  
         
       }
       
@@ -165,7 +156,7 @@ const developmentTools = [
           <h2>Frontend Development & Design</h2>
           <ul>
             {#each frontendSkills as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconUrl} />
+              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
             {/each}
           </ul>
         </div>
@@ -174,7 +165,7 @@ const developmentTools = [
           <h2>Backend Development & Databases</h2>
           <ul>
             {#each backendSkills as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconUrl} />
+              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
             {/each}
           </ul>
         </div>
@@ -183,14 +174,14 @@ const developmentTools = [
           <h2>Tools & Software</h2>
           <ul>
             {#each toolsAndSoftware as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconUrl} />
+              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
             {/each}
           </ul>
 
           <h2>Development Tools</h2>
           <ul>
             {#each developmentTools as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconUrl} />
+              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
             {/each}
           </ul>
         </div>
