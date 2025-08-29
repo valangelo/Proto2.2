@@ -52,9 +52,11 @@
       background: figure,
       url: "https://proto1-2.vercel.app/",
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
+        `"Proto" was my capstone project, created under a tight deadline and technical constraints. The concept emerged during wireframing; I envisioned my portfolio not just as a site, but as a character.
+This led me to develop a persona named "Proto" to serve as my voice. With a focus on simplicity, I poured my energy into crafting a unique mood through typography and a deliberate color palette, giving the project its own identity.`,
       backstory:
-        "Proto1.2 was my first major portfolio project developed during a coding bootcamp. It was designed to showcase my skills and was awarded the certificate for the best capstone project, marking a significant milestone in my career.",
+        `"Proto" was my capstone project, created under a tight deadline and technical constraints. The concept emerged during wireframing; I envisioned my portfolio not just as a site, but as a character.
+This led me to develop a persona named "Proto" to serve as my voice. With a focus on simplicity, I poured my energy into crafting a unique mood through typography and a deliberate color palette, giving the project its own identity.`,
     },
     {
       id: "proto22Dialog",
@@ -63,12 +65,9 @@
       image: proto2,
       background: figure,
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
+        `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
       backstory:
-        `Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft
-        Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft
-        Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft
-        Proto2.2 is an evolution of my initial portfolio, incorporating advanced features and a more refined design based on feedback from users and peers. It represents my growth and ongoing commitment to improving my craft`,
+        `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
     },
   ];
 
