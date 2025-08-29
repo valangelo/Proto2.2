@@ -19,10 +19,10 @@
       { href: 'mailto:valangelovalencia@gmail.com',
             src: imgGmail,
             alt: 'email' },
-      { href: '#',
+      { href: 'https://www.youtube.com/@nohuart9854',
             src: imgYoutube,
             alt: 'youtube' },
-      { href: '#',
+      { href: 'https://vero.co/nohuart',
             src: imgVero,
             alt: 'vero' }
     ];
@@ -100,7 +100,7 @@ footer {
         display: grid;
         grid-template-columns: auto 1fr;
         gap: 1rem;
-        // margin: 1rem;
+        margin: 1rem;
         label{
             font-family: "Neucha";
             font-size: $font-size-md
@@ -116,6 +116,8 @@ footer {
     .submit-button{
         @include doodleButton(false);
         &{
+            vertical-align: center  ;
+            font-size: larger;
             grid-column: 1/-1;
             font-family: "Neucha";
         }

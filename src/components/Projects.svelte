@@ -39,7 +39,7 @@
       title: "Gawarang",
       image: Gawarang,
       background: GawarangBG,
-      url: "https://www.google.com/",
+      url: "https://proto2-2.vercel.app/",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
       backstory:
@@ -59,7 +59,7 @@
     {
       id: "proto22Dialog",
       title: "Proto2.2",
-      url: "https://www.google.com/",
+      url: "https://proto2-2.vercel.app/",
       image: proto2,
       background: figure,
       description:
@@ -114,7 +114,7 @@
 
     <div class="cards">
       {#each projects as project (project.id)}
-        <div class="card">
+        <div class="card workinprogress">
           <div
             class="containerPreview"
             style="background-image:url({project.image})"
@@ -195,6 +195,7 @@
     } //!ProjectsHeadingWrapper &
   } //!ProjectsHeadingWrapper
   .card {
+     
     width: 100%;
     display: grid;
     grid-row: span 4;
@@ -317,4 +318,34 @@
     backdrop-filter: blur(20px);
     // opacity: .9;
   }
+
+  .workinprogress {
+  position: relative;
+  &::after {
+    outline: 3px solid #00000023;
+    transform-origin: center;
+    content: "Work in Progress";
+    position: absolute;
+    z-index: 111;
+    text-align: center;
+    font-size: clamp(1.5rem, 2.5vw, 4rem); 
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    border: 5px gray solid;
+    filter: drop-shadow(2px 2px 4px rgb(39, 39, 39));
+    aspect-ratio: 1/1;
+    transform: rotate(340deg);
+    left:15%;
+    top:15%;
+    width: 70%;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+}
+
+
 </style>

@@ -128,10 +128,9 @@
       
 
       h2{
-        line-height: 3rem;
+        line-height: 5rem;
         font-family: 'Caveat';  
       }
-  
         
       }
       

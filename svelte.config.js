@@ -1,7 +1,7 @@
 // svelte.config.js
 
-// import adapter from '@sveltejs/adapter-auto';
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-auto';
+
 
 import sveltePreprocess from 'svelte-preprocess';
 
@@ -18,7 +18,6 @@ const config = {
                 `
         },
     }),
-
     kit: {
         adapter: adapter({
             // default options are shown

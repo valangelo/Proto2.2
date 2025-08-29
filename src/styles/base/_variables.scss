@@ -17,16 +17,16 @@
 
 
 // Base Colors
-$beige: #Cb997e;
-$peach: #ddbea9;
-$cream: #ffe8d6;
-$olive: #b7b7a4;
+$beige: hsl(21, 43%, 65%);
+$peach: hsl(24, 43%, 76%);
+$cream: hsl(26, 100%, 92%);
+$olive: hsl(60, 12%, 68%);
 
 // Font Colors
-$clr-font-100:#303030;
-$clr-font-200:#2b2b2b;
-$clr-font-300:#1f1f1f;
-$clr-font-400:#1b1c1e;
+$clr-font-100:hsl(0, 0%, 19%);
+$clr-font-200:hsl(0, 0%, 17%);
+$clr-font-300:hsl(0, 0%, 12%);
+$clr-font-400:hsl(220, 5%, 11%);
 $clr-font-100-light: lighten($clr-font-100, 40%);
 $clr-font-200-light: lighten($clr-font-200, 40%);
 $clr-font-300-light: lighten($clr-font-300, 40%);
