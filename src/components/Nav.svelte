@@ -18,40 +18,15 @@
     console.log(isOpen);
   } 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style lang="scss">
   
   div {
-
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     @include highlightTags('nav', 2);
   }
-
+  
   nav {
-    @include doodleBorder(1);
+    @include doodleButton(true);
     &{
       display: flex;
       margin-inline: calc($indent * 3);
@@ -59,12 +34,9 @@
       align-items: center;
     }
   }
-
-  
-
-  // .nav__links.open {
-  //   display: flex;
-  // }
+  .nav__links.open {
+    display: flex;
+  }
 </style>
 
 <div>

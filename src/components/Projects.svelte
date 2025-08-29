@@ -39,7 +39,7 @@
       title: "Gawarang",
       image: Gawarang,
       background: GawarangBG,
-      url: "google.com",
+      url: "https://www.google.com/",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat facere debitis minima. Vel laudantium modi earum. Voluptatibus eaque autem expedita cum eveniet mollitia consectetur tempora facilis exercitationem ipsa! Ipsum, maxime. Sequi voluptatem debitis qui laboriosam, labore tempora tenetur unde laborum deleniti rem commodi quam eveniet, temporibus, quisquam quod officiis doloribus quidem vitae cum dolor. Harum atque qui assumenda incidunt perspiciatis!",
       backstory:
@@ -59,7 +59,7 @@
     {
       id: "proto22Dialog",
       title: "Proto2.2",
-      url: "google.com",
+      url: "https://www.google.com/",
       image: proto2,
       background: figure,
       description:

@@ -71,7 +71,8 @@ $shadow-hover-skew: calc($hover-skew/ 2) * -1;
   
   .hero_containerText {
     // margin-inline:calc($indent * );
-    height: 15rem;
+    min-height: 15rem;
+    // height: 15rem;
     background-color:$white;
   flex: 5;
   // max-width: 75%;

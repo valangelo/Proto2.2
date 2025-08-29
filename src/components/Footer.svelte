@@ -47,7 +47,7 @@ footer {
     text-align: center;
     grid-template-columns: auto auto auto;
     justify-content: center;
-    gap: 20px; // Adjust the gap as needed
+    gap: 1rem;
     margin-inline: calc($indent * 3);
     }
 }
@@ -68,7 +68,7 @@ footer {
     }
     p{
         font-family: "Neucha";
-        // font-weight: $font-weight-bolder;
+        font-weight: $font-weight-bolder;
         font-size: $font-size-md;
     }
 }

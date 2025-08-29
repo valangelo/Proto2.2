@@ -9,6 +9,7 @@
   .nav__branding {
     @include doodleButton(false);
     &{
+      min-width: 14rem;
       display: flex;
       align-items: center;
       gap: 1rem;
