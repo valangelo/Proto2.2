@@ -61,11 +61,10 @@
 @include font-face('GloriaHallelujah', 'Gloria_Hallelujah/GloriaHallelujah-Regular');
 @include font-face('Caveat', 'Caveat/static/Caveat-Regular');
 @include font-face('Neucha', 'Neucha/Neucha-Regular');
-    .containerSkills{
-    @include highlightTags('section', 2);
-  }
-  section{
-    @include doodleBorder(1);
+
+
+  .containerSkills{
+  @include doodleBorder(1);
     &{
       margin-inline:calc($indent * 3);
       filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
@@ -142,48 +141,47 @@
     </style>
 
 <!-- HTML -->
-<div class="containerSkills">
-  <section id="skills">
-    <div class="skillsHeadingWrapper">
-      <div class="tape-section"></div>
-      <h2>Skills</h2>
-        <div class="tape-section"></div>
+<section id="skills" class="containerSkills">
+  <div class="skillsHeadingWrapper">
+    <div class="tape-effect"></div>
+    <h2>Skills</h2>
+      <div class="tape-effect"></div>
+    </div>
+
+    <div class="container-column-3">
+      <div>
+        <h2>Frontend Development & Design</h2>
+        <ul>
+          {#each frontendSkills as skill}
+            <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
+          {/each}
+        </ul>
       </div>
 
-      <div class="container-column-3">
-        <div>
-          <h2>Frontend Development & Design</h2>
-          <ul>
-            {#each frontendSkills as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
-            {/each}
-          </ul>
-        </div>
-
-        <div>
-          <h2>Backend Development & Databases</h2>
-          <ul>
-            {#each backendSkills as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
-            {/each}
-          </ul>
-        </div>
-
-        <div>
-          <h2>Tools & Software</h2>
-          <ul>
-            {#each toolsAndSoftware as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
-            {/each}
-          </ul>
-
-          <h2>Development Tools</h2>
-          <ul>
-            {#each developmentTools as skill}
-              <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
-            {/each}
-          </ul>
-        </div>
+      <div>
+        <h2>Backend Development & Databases</h2>
+        <ul>
+          {#each backendSkills as skill}
+            <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
+          {/each}
+        </ul>
       </div>
-    </section>
-  </div>
+
+      <div>
+        <h2>Tools & Software</h2>
+        <ul>
+          {#each toolsAndSoftware as skill}
+            <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
+          {/each}
+        </ul>
+
+        <h2>Development Tools</h2>
+        <ul>
+          {#each developmentTools as skill}
+            <Skill name={skill.name} className={skill.className} iconUrl={skill.iconName} />
+          {/each}
+        </ul>
+      </div>
+    </div>
+  </section>
+  

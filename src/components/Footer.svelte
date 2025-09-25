@@ -35,10 +35,6 @@
 
 
 
-.FooterContainer {
-    @include highlightTags('footer', 2);
-}
-
 footer {
     @include doodleBorder;
     & {

@@ -5,7 +5,7 @@
   let logoUrl: string = import.meta.env.VITE_API_URL;
   let brandingText: string = import.meta.env.VITE_APP_NAME;
   
-  let isOpen:boolean = false;
+  let isOpen:boolean = true;
   let navLinks = [
     { text: 'About', location: '/#about', className: 'navLink navLink__aboutHim' },
     { text: 'Skills', location: '/#skills', className: 'navLink navLink__skills' },
@@ -19,31 +19,28 @@
   } 
 </script>
 <style lang="scss">
-  
-  div {
-    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
-    @include highlightTags('nav', 2);
-  }
-  
   nav {
-    @include doodleButton(true);
+    width: 95%;
+       margin:auto;
+        display: grid;
+        place-items: center;
+        // outline: auto;
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+    container: mainnav / inline-size;
+    @include doodleBorder(true);
     &{
+      overflow:clip;
+      align-content: center;
       display: flex;
-      margin-inline: calc($indent * 3);
       justify-content: space-between;
       align-items: center;
     }
   }
-  .nav__links.open {
-    display: flex;
-  }
 </style>
 
-<div>
   <nav>
     <Nav__Branding {logoUrl} {brandingText} className="nav__branding"/>
     {#if navLinks && navLinks.length > 0}
       <Nav__Links {isOpen} {navLinks}  />
     {/if}
   </nav>
-</div>

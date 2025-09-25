@@ -32,10 +32,9 @@
     }
   }
 
-    .containerAboutHim{
-    @include highlightTags('section', 2,);
-  }
-  section{
+    
+    section{
+    
     // mask: url(../asssets/images/border-svg.png);
     // mask-size: cover;
     // -webkit-mask: url(../assets/images/border-mask.webp);
@@ -124,25 +123,23 @@
     text-decoration: none;
   }
   </style>
-<div class="containerAboutHim">
-  <section id="about">
-    <div>
-      <h2>Greetings, Earthlings!</h2>
-      <h3>Meet the one and only: <span>Angelo!</span></h3>
-      <h4>Primary Functions</h4>
-      <ul>
-        <li>Supreme Sorcerer of Visual <span class="vs"/> Wizardry, conjuring tales that pop out of the box!</li>
-        <li>Engages in recreational antics: conquering digital <span class="camera"/> realms, trekking terrestrial trails <span class="trek"/>, and exploring liquidy wonders <span class="sea"/></li>
-        <li>
-          <p>Gaming Enthusiast: Conqueror of <span class="lol">League of Legends</span>, <span class="wotlk">World Of Warcraft: Wrath Of The Lich King</span>,</p>
-          <p>and captivating worlds of <span class="horizon">Horizon: Zero Dawn & Forbidden West</span>.</p>
-        </li>
-        <li>The Chief caretaker of three mischievous feline companions: <span class="elliot">Elliot</span>, <span class="timmy">Timmy</span>, and the newest addition, the energetic <span class="natsu">Natsu</span>.</li>
-      </ul>
-      <p>Get ready to join the fun! Follow Angelo's escapades through the social laughter network below! <a href='#contacthim'>&#128071;</a></p>
-    </div>
-    <div class="valiw">
-      <img src={valiw} alt="Valiw">
-    </div>
-  </section>
-</div>
+<section id="about" class="containerAboutHim">
+  <div>
+    <h2>Greetings, Earthlings!</h2>
+    <h3>Meet the one and only: <span>Angelo!</span></h3>
+    <h4>Primary Functions</h4>
+    <ul>
+      <li>Supreme Sorcerer of Visual <span class="vs"/> Wizardry, conjuring tales that pop out of the box!</li>
+      <li>Engages in recreational antics: conquering digital <span class="camera"/> realms, trekking terrestrial trails <span class="trek"/>, and exploring liquidy wonders <span class="sea"/></li>
+      <li>
+        <p>Gaming Enthusiast: Conqueror of <span class="lol">League of Legends</span>, <span class="wotlk">World Of Warcraft: Wrath Of The Lich King</span>,</p>
+        <p>and captivating worlds of <span class="horizon">Horizon: Zero Dawn & Forbidden West</span>.</p>
+      </li>
+      <li>The Chief caretaker of three mischievous feline companions: <span class="elliot">Elliot</span>, <span class="timmy">Timmy</span>, and the newest addition, the energetic <span class="natsu">Natsu</span>.</li>
+    </ul>
+    <p>Get ready to join the fun! Follow Angelo's escapades through the social laughter network below! <a href='#contacthim'>&#128071;</a></p>
+  </div>
+  <div class="valiw">
+    <img src={valiw} alt="Valiw">
+  </div>
+</section>

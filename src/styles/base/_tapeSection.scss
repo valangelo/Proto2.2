@@ -1,19 +1,16 @@
-
-
-
 &{
   h2{
     font-family: "GloriaHallelujah";
     font-size: $font-size-xl;
   }
-  .tape-section {
+  .tape-effect {
   position: absolute;
   width: 100%;
   }
-  .tape-section:first-of-type {
+  .tape-effect:first-of-type {
   top: 0;
   }
-  .tape-section:last-of-type {
+  .tape-effect:last-of-type {
   bottom: 0;
   }
 }
@@ -23,12 +20,12 @@ $tape-edge: #666;
 $tape-offsetX:-5vmin;
 $tape-offsetY:-2vmin;
 $tape-rotate:(45deg);
-.tape-section {
+.tape-effect {
   justify-content: center;
   position: absolute;
 }
-.tape-section::before,
-.tape-section::after {
+.tape-effect::before,
+.tape-effect::after {
   display: flex;
   position: absolute;
   justify-content: center;
@@ -45,24 +42,24 @@ $tape-rotate:(45deg);
   color: rgba(0, 0, 0, 0.08); 
 }
 
-.tape-section:first-of-type::before {
+.tape-effect:first-of-type::before {
   transform: rotate(-$tape-rotate);
   left: $tape-offsetX;
   bottom: $tape-offsetY;
 }
 
-.tape-section:first-of-type::after {
+.tape-effect:first-of-type::after {
   transform: rotate($tape-rotate);
   right:$tape-offsetX;
   bottom: $tape-offsetY;
 }  
-.tape-section:last-of-type::before {
+.tape-effect:last-of-type::before {
   transform: rotate($tape-rotate);
   left:$tape-offsetX;
   bottom: $tape-offsetY;
 }
 
-.tape-section:last-of-type::after {
+.tape-effect:last-of-type::after {
   transform: rotate(-$tape-rotate);
 right:$tape-offsetX;
 bottom: $tape-offsetY;

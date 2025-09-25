@@ -6,10 +6,9 @@
     image: string;
     url: string;
     background: string;
-    description: string;
+    summary: string;
     backstory: string;
   }
-  import Dialog from "./Projects__Dialog.svelte";
   import PitikElliot from "/src/assets/images/pitikElliot.svg";
   import Gawarang from "/src/assets/images/gawarang.svg";
   import GawarangBG from "/src/assets/images/gawarangbg.jpg";
@@ -22,7 +21,7 @@
       image: PitikElliot,
       background: PitikElliot,
       url: "https://pitikcats.vercel.app/",
-      description:
+      summary:
         '"PitikCats" is a personal webpage where I share photos of cats and dogs I encounter during my daily walks. Each photo captures unique moments in their everyday lives, highlighting the beauty in the ordinary.',
       backstory: `
       <div class="test">
@@ -41,7 +40,7 @@
       image: Gawarang,
       background: GawarangBG,
       url: "https://proto2-2.vercel.app/",
-      description:
+      summary:
         "This is a personal project: a custom-designed, hand-coded blog and portfolio website for my girlfriend.",
       backstory:
         "This is a personal project: a custom-designed, hand-coded blog and portfolio website for my girlfriend.",
@@ -52,7 +51,7 @@
       image: figure,
       background: figure,
       url: "https://proto1-2.vercel.app/",
-      description: `"Proto" was my capstone project, created under a tight deadline and technical constraints. The concept emerged during wireframing; I envisioned my portfolio not just as a site, but as a character.
+      summary: `"Proto" was my capstone project, created under a tight deadline and technical constraints. The concept emerged during wireframing; I envisioned my portfolio not just as a site, but as a character.
 This led me to develop a persona named "Proto" to serve as my voice. With a focus on simplicity, I poured my energy into crafting a unique mood through typography and a deliberate color palette, giving the project its own identity.`,
       backstory: `"Proto" was my capstone project, created under a tight deadline and technical constraints. The concept emerged during wireframing; I envisioned my portfolio not just as a site, but as a character.
 This led me to develop a persona named "Proto" to serve as my voice. With a focus on simplicity, I poured my energy into crafting a unique mood through typography and a deliberate color palette, giving the project its own identity.`,
@@ -63,16 +62,16 @@ This led me to develop a persona named "Proto" to serve as my voice. With a focu
       url: "https://proto2-2.vercel.app/",
       image: proto2,
       background: figure,
-      description: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
+      summary: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
       backstory: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
     },
-    {
+        {
       id: "proto22Dialossg",
       title: "Proto2.2",
       url: "https://proto2-2.vercel.app/",
       image: proto2,
       background: figure,
-      description: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
+      summary: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
       backstory: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
     },
   ];
@@ -106,73 +105,62 @@ This led me to develop a persona named "Proto" to serve as my voice. With a focu
   const redirectTo = (url: string): void => {
     window.location.href = url;
   };
-
-  let dialogs: Record<string, Dialog> = {};
 </script>
 
 <!--
 *********************************
           MARK: HTML
 *********************************
-
-#NOTE
-
-- Structure:
-div.projects
-        ├── div.projects-header
-        │     ├── div.tape-effect
-        │     ├── h2
-        │     └── div.tape-effect
-        └── div.projects-grid
-              └── div.project-card
-                    ├── div.containerPreview
-                    ├── button.cardheading
-                    └── div.cardDescription
-
 -->
+<div class="projects-section">
+  <section id="projects" class="projects">
+    <div class="projects-header">
+      <div class="project-headesr-decoration" />
+      <h2>Projects</h2>
+      <div class="project-headers-decoration" />
+    </div>
 
-<div id="projects" class="projects">
-  <div class="projects-header">
-    <div class="tape-effect" />
-    <h2>Projects</h2>
-    <div class="tape-effect" />
-  </div>
+    <div class="projects-grid">
+      {#each projects as project (project.id)}
+        <div class="card workinprogress">
+          <div
+            class="containerPreview"
+            style="background-image:url({project.image})"
+          />
+          <button
+            class="cardheading"
+            data-dialog-id={project.id}
+            on:click={() => openDialog(project.id, project.background)}
+            aria-controls={project.id}
+          >
+            {project.title}
+          </button>
 
-  <div class="projects-grid">
-    {#each projects as project (project.id)}
-      <div class="project-card workinprogress">
-        <div
-          class="containerPreview"
-          style="background-image:url({project.image})"
-        />
-        <button
-          class="cardheading"
-          data-dialog-id={project.id}
-          on:click={() => openDialog(project.id, project.background)}
-          aria-controls={project.id}
-        >
-          {project.title}
-        </button>
-
-        <div class="cardDescription">
-          {project.description}
+          <div class="project-summary">
+            {project.summary}
+          </div>
         </div>
-      </div>
-    {/each}
-  </div>
-</div>
 
-{#each projects as project (project.id)}
-  <Dialog
-    bind:this={dialogs[project.id]}
-    id={project.id}
-    title={project.title}
-    image={project.image}
-    url={project.url}
-    background={project.background}
-    backstory={project.backstory}
-  />
-{/each}
+        <!-- Project Dialog -->
+        <dialog id={project.id}>
+          <div class="dialogHeading">
+            <img src={project.image} alt={project.title} />
+            <h2>{project.title}</h2>
+          </div>
+          <div class="description">
+            {@html project.backstory}
+          </div>
+          <div class="dialogButtonscontainer">
+            <button on:click={() => redirectTo(project.url)}
+              >Open Project
+            </button>
+            <button on:click={() => closeDialog(project.id)}> Close </button>
+          </div>
+        </dialog>
+      {/each}
+    </div>
+  </section>
+</div>
 
 <!--
 *********************************
@@ -181,11 +169,19 @@ div.projects
 -->
 
 <style lang="scss">
-  @include font-face("Neucha", "Neucha/Neucha-Regular");
-
+  @include font-face("Neucha", "Neucha/N-Regular");
+  .projects-section{
+    @include highlightTags("section", 2);
+    padding: 5rem;
+    container: projectcards / inline-size;
+    max-width: 100%;
+    display: block;
+    outline: red solid 100px;
+  }
   .projects {
     @include doodleBorder(1);
     & {
+      outline: auto;
       margin-inline: calc($indent * 3);
       display: flex;
       flex-direction: column;
@@ -201,10 +197,10 @@ div.projects
       position: relative;
       padding-block: 1rem;
       text-align: center;
-    } //!header &
-  } //!header
+    } //projects-header 
+  } 
 
-  .projects-grid {
+  .container {
     container-type: inline-size;
     // min-height: max-content;
     margin-block-start: 3rem;
@@ -220,26 +216,27 @@ div.projects
     gap: 1rem;
     @include doodleBorder(1);
 
+
     /////////////////
-    // region ::project-card
+    // region ::CARD
     /////////////////
-    .project-card {
+    .card {
       display: grid;
       grid-column: auto;
       grid-row: span 4;
-      grid-template-rows: subgrid;
+      grid-template-rows: subgrid;  
       @media (width > $spacing-responsive-lg) {
-        // outline: 1px red solid;
+        outline: 1px red solid;
         display: block;
       }
 
-      &:hover .project-thumbnail {
+      &:hover .containerPreview {
         //animation for "Hovered Card"
         filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
         transform: translateY(-4px);
         background-size: 115%;
-      } //!:hover .project-thumbnail
-    } //!project-thumbnail
+      } //!:hover .containerPreview
+    } //!containerPreview
 
     button {
       @include doodleButton(1);
@@ -259,7 +256,7 @@ div.projects
       transition:
         background-size 0.5s ease-in-out,
         filter 0.5s ease-in-out;
-      margin-inline: auto;
+        margin-inline: auto;
       min-width: calc($spacing-responsive-lg * 5);
       aspect-ratio: 1;
       background-size: 100%;
@@ -281,6 +278,56 @@ div.projects
     } //!cardDescription
   } //!card
 
+  dialog[open] {
+    position: fixed;
+    background-color: rgba(211, 211, 211, 0.9);
+    backdrop-filter: blur(20px);
+    // background-blend-mode:overlay;
+    // @media (min-width: 768px) {
+    //   width: 90vw;
+    //   // height: 80vh;
+    // }
+
+    .dialogHeading {
+      float: left;
+      display: inline;
+      img {
+        @include doodleBorder(2);
+        & {
+          aspect-ratio: 1/1;
+          width: 12rem;
+          // height: 100%;
+          // width: 100%;
+          // object-fit: cover;
+          // display: flex;
+        }
+      }
+
+      h2 {
+        font-size: $font-size-xxl;
+      }
+    }
+
+    .description {
+      font-size: $font-size-md;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      padding-bottom: 5rem;
+    }
+
+    .dialogButtonscontainer {
+      position: absolute;
+      // position: relative;
+      right: 0;
+      bottom: 0;
+      float: inline-end;
+      // display: flex;
+      // justify-content: flex-end;
+      // align-self: end;
+      padding: 2rem;
+    }
+  }
   ::backdrop {
     // background-image: var(--backdrop-image);
     // background-blend-mode: overlay;
@@ -292,28 +339,28 @@ div.projects
   }
 
   .workinprogress {
-    position: relative;
-    &::after {
-      outline: 3px solid #00000023;
-      transform-origin: center;
-      content: "Work in Progress";
-      position: absolute;
-      z-index: 11;
-      text-align: center;
-      font-size: clamp(1.5rem, 2.5vw, 4rem);
-      color: #000;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 50%;
-      border: 5px gray solid;
-      filter: drop-shadow(2px 2px 4px rgb(39, 39, 39));
-      aspect-ratio: 1/1;
-      transform: rotate(340deg);
-      inset: 1rem;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      // justify-content: center;
-      pointer-events: none;
-    }
+    // position: relative;
+    // &::after {
+    //   outline: 3px solid #00000023;
+    //   transform-origin: center;
+    //   content: "Work in Progress";
+    //   position: absolute;
+    //   z-index: 11;
+    //   text-align: center;
+    //   font-size: clamp(1.5rem, 2.5vw, 4rem);
+    //   color: #000;
+    //   background-color: rgba(255, 255, 255, 0.85);
+    //   border-radius: 50%;
+    //   border: 5px gray solid;
+    //   filter: drop-shadow(2px 2px 4px rgb(39, 39, 39));
+    //   aspect-ratio: 1/1;
+    //   transform: rotate(340deg);
+    //   inset: 1rem;
+    //   margin: auto; 
+    //   display: flex;
+    //   align-items: center;
+    //   // justify-content: center;
+    //   pointer-events: none;
+    // }
   }
 </style>

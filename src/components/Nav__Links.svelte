@@ -11,6 +11,7 @@
   @include font-face('Shadows into Light', 'Shadows_Into_Light/ShadowsIntoLight-Regular');
   .links {
     display: flex;
+    margin-left: 1rem;
     gap: 1rem;
     align-content: space-between;    
   }
@@ -99,6 +100,11 @@
 }
 .nav__links .open{
   background-color: green;
+}
+@container mainnav (width < 40em) {
+  .links {
+    display:none;
+  }
 }
 
 </style>
