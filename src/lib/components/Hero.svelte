@@ -1,6 +1,6 @@
 <!-- src/components/Hero.svelte -->
 <script>
-  import proto from "../assets/images/proto2.2.svg";
+  import proto from '$lib/assets/images/proto2.2.svg';
 </script>
 
 <section class="hero">
@@ -23,11 +23,9 @@
 </section>
 
 <style lang="scss">
-  @include font-face("Mynerve", "Mynerve/Mynerve-Regular");
-  @include font-face("Caveat", "Caveat/static/Caveat-Medium", 500);
-  @include font-face("Neucha", "Neucha/Neucha-Regular");
-  $shadow-color-dark: #333;
-  $shadow-color-light: hsl(61, 67%, 88%);
+  
+  $shadow-color-dark: hsl(0, 0%, 20%);
+  $shadow-color-light: hsla(60, 93%, 89%, 0.804);
   $shadow-color: rgba(0, 0, 0, 0.1);
   $spacing-unit: 10px;
   $box-shadow-main: 
@@ -69,9 +67,7 @@
     // padding: 3rem;
     // gap:5rem;
     flex-direction: row-reverse;
-    // background-color: red;
-    outline: auto;
-    
+    // background-color: red;    
     &__text {// .hero__text (container for hero's TEXT)
       min-height: 15rem;
       background-color: $shadow-color-light;
@@ -86,7 +82,7 @@
 
       h2 {
         font-family: "Mynerve";
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-bolder;
         font-size: $font-size-xxl;
         line-height: 3rem;
         span {

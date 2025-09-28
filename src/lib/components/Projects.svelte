@@ -10,11 +10,13 @@
     backstory: string;
   }
   import Dialog from "./Projects__Dialog.svelte";
-  import PitikElliot from "/src/assets/images/pitikElliot.svg";
-  import Gawarang from "/src/assets/images/gawarang.svg";
-  import GawarangBG from "/src/assets/images/gawarangbg.jpg";
-  import figure from "/src/assets/images/figure.svg";
-  import proto2 from "/src/assets/images/proto2.2.svg";
+
+  
+  import PitikElliot from '$lib/assets/images/pitikElliot.svg';
+  import Gawarang from '$lib/assets/images/gawarang.svg';
+  import GawarangBG from '$lib/assets/images/gawarangbg.jpg';
+  import Figure from '$lib/assets/images/figure.svg';
+  import proto2 from "$lib/assets/images/proto2.2.svg";
   const projects: Project[] = [
     {
       id: "pitikCatsDialog",
@@ -49,8 +51,8 @@
     {
       id: "proto10Dialog",
       title: "Proto1.2",
-      image: figure,
-      background: figure,
+      image: Figure,
+      background: Figure,
       url: "https://proto1-2.vercel.app/",
       description: `"Proto" was my capstone project, created under a tight deadline and technical constraints. The concept emerged during wireframing; I envisioned my portfolio not just as a site, but as a character.
 This led me to develop a persona named "Proto" to serve as my voice. With a focus on simplicity, I poured my energy into crafting a unique mood through typography and a deliberate color palette, giving the project its own identity.`,
@@ -62,7 +64,7 @@ This led me to develop a persona named "Proto" to serve as my voice. With a focu
       title: "Proto2.2",
       url: "https://proto2-2.vercel.app/",
       image: proto2,
-      background: figure,
+      background: Figure,
       description: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
       backstory: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
     },
@@ -71,7 +73,7 @@ This led me to develop a persona named "Proto" to serve as my voice. With a focu
       title: "Proto2.2",
       url: "https://proto2-2.vercel.app/",
       image: proto2,
-      background: figure,
+      background: Figure,
       description: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
       backstory: `Proto 2.2 is a complete rebuild and reimagining of my original capstone project. The goal was to modernize the "Proto" concept by porting it from a static HTML/Bootstrap site into a full-fledged SvelteKit application.`,
     },
@@ -233,12 +235,12 @@ div.projects
         display: block;
       }
 
-      &:hover .project-thumbnail {
-        //animation for "Hovered Card"
-        filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
-        transform: translateY(-4px);
-        background-size: 115%;
-      } //!:hover .project-thumbnail
+      // &:hover .project-thumbnail {
+      //   //animation for "Hovered Card"
+      //   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+      //   transform: translateY(-4px);
+      //   background-size: 115%;
+      // } //!:hover .project-thumbnail
     } //!project-thumbnail
 
     button {

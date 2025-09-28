@@ -1,11 +1,12 @@
 <script lang="ts">
-    import proto from '../assets/images/figure.svg';
-    import imgfb from '../assets/images/icons8-facebook-50.svg';
-    import imglinked from '../assets/images/icons8-linkedin-circled-50.svg';
-    import imgGithub from '../assets/images/logo-github.svg';
-    import imgGmail from '../assets/images/icons8-gmail-logo-50.svg';
-    import imgYoutube from '../assets/images/icons8-youtube-50.svg';
-    import imgVero from '../assets/images/veroHandDrawn.webp';
+  import proto from '$lib/assets/images/figure.svg';
+  import imgfb from '$lib/assets/images/icons8-facebook-50.svg';
+  import imglinked from '$lib/assets/images/icons8-linkedin-circled-50.svg';
+  import imgGithub from '$lib/assets/images/logo-github.svg';
+  import imgGmail from '$lib/assets/images/icons8-gmail-logo-50.svg';
+  import imgYoutube from '$lib/assets/images/icons8-youtube-50.svg';
+  import imgVero from '$lib/assets/images/veroHandDrawn.webp';
+
     const socialLinks = [
       { href: '#',
             src: imgfb,
@@ -29,10 +30,9 @@
   </script>
   
 <style lang="scss">
-    
+
 @include font-face('Mynerve', 'Mynerve/Mynerve-Regular');
 @include font-face('Neucha', 'Neucha/Neucha-Regular');
-
 
 
 footer {

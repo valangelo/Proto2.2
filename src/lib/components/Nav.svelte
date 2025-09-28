@@ -5,7 +5,7 @@
   let logoUrl: string = import.meta.env.VITE_API_URL;
   let brandingText: string = import.meta.env.VITE_APP_NAME;
   
-  let isOpen:boolean = true;
+  let isOpen: boolean = false;
   let navLinks = [
     { text: 'About', location: '/#about', className: 'navLink navLink__aboutHim' },
     { text: 'Skills', location: '/#skills', className: 'navLink navLink__skills' },
@@ -15,32 +15,42 @@
 
   function toggleNav() {
     isOpen = !isOpen;
-    console.log(isOpen);
-  } 
+  }
 </script>
+
 <style lang="scss">
   nav {
     width: 95%;
-       margin:auto;
-        display: grid;
-        place-items: center;
-        // outline: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 1rem 0;
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     container: mainnav / inline-size;
-    @include doodleBorder(true);
-    &{
-      overflow:clip;
-      align-content: center;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    @include doodleBorder(1);
+
+  }
+
+  @container mainnav (max-width: 768px) {
+    nav {
+      flex-wrap: wrap;
     }
   }
 </style>
+<!-- on:click={toggleNav} -->
 
-  <nav>
-    <Nav__Branding {logoUrl} {brandingText} className="nav__branding"/>
-    {#if navLinks && navLinks.length > 0}
-      <Nav__Links {isOpen} {navLinks}  />
-    {/if}
-  </nav>
+<nav>
+  <div
+  role="button"
+  tabindex="0"
+  on:click={toggleNav}
+  on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggleNav()}
+  >
+    <Nav__Branding {isOpen} {logoUrl} {brandingText} />
+  </div>
+  
+  {#if navLinks && navLinks.length > 0}
+    <Nav__Links {isOpen} {navLinks} />
+  {/if}
+</nav>

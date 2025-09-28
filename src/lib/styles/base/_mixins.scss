@@ -1,0 +1,124 @@
+@use "sass:math";
+
+
+@mixin doodleBorder($backgroundImage: 0) {
+  // group declarations in an explicit selector block
+  & {
+    border-radius: $border-radius;
+    border-style: solid;
+    border-width: $border-width;
+    border-image: $image-border;
+    box-shadow: $shadow-large;
+  }
+
+  @if $backgroundImage == 1 {
+    & {
+      background-image: $image-background-crumpled-paper;
+    }
+  }
+  @else if $backgroundImage == 2 {
+    & {
+      background-image: $image-background;
+    }
+  }
+  @else {
+    & {
+      background-image: none;
+    }
+  }
+}
+
+
+// Doodle Button
+@mixin doodleButton($useimage: true) {
+  @if $useimage == true {
+    & {
+      background-image: $image-background-crumpled-paper;
+    }
+  }
+
+  & {
+    background-color: $backgroundSecondary;
+    background-size: contain;
+    border-radius: $border-radius;
+    border-style: solid;
+    border-width: $border-width;
+    border-image: $image-button;
+    box-shadow: $shadow-large;
+  }
+}
+
+
+
+
+@mixin highlightTags($element, $indent-level) {
+  &::before,
+  &::after {
+    color: $clr-font-100-light;
+    font-family: "GloriaHallelujah";
+    /* font-weight: $font-weight-bold; */
+    line-height: 1.5rem;
+  }
+
+  &::before {
+    content: "<#{$element}>";
+    margin-left: calc($indent * $indent-level);
+  }
+
+  &::after {
+    content: "</#{$element}>";
+    margin-left: calc($indent * $indent-level);
+  }
+}
+
+
+ @mixin icon($icon-url, $icon-size: $icons-size) {
+    &::before {
+      content: "";
+      display: inline-block;
+      height: $icon-size;
+      width: $icon-size;
+      vertical-align: middle;
+      background-image: url($icon-url);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+
+@mixin paper-slit(
+  $bg-color: #fff,
+  $corner-size: 50px,
+  $slit-thickness: 10px,
+  $padding: 30px,
+  $shadow-color: rgba(0,0,0,0.094))
+  {
+  box-shadow: $shadow-large;
+  padding: $padding;
+  background-image: 
+  radial-gradient(farthest-side at 0 0, #000, transparent),//topleft
+  radial-gradient(farthest-side at 100% 100%, #000, transparent),//botright
+  linear-gradient($bg-color 0 0);//background
+  
+  background-repeat: no-repeat;
+  background-position:
+  0 0,
+  100% 100%,
+  50% 50%,
+    calc(100% - #{math.div($slit-thickness, 2)}) calc(#{math.div($slit-thickness, 2)}),
+    calc(#{math.div($slit-thickness, 2)}) calc(100% - #{math.div($slit-thickness, 2)});
+    background-size:
+    #{$corner-size} #{$corner-size},
+    #{$corner-size} #{$corner-size},
+    calc(100% - #{$padding}) calc(100% - #{$padding}),
+    $slit-thickness $slit-thickness,
+    $slit-thickness $slit-thickness;
+  clip-path: polygon(
+    0 $corner-size,
+    $corner-size 0,
+    100% 0,
+    100% calc(100% - #{$corner-size}),
+    calc(100% - #{$corner-size}) 100%,
+    0 100%
+  );
+}

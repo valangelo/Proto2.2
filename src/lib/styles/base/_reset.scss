@@ -38,7 +38,7 @@ section {
 }
 
 body {
-    height: 200vh;
+    height: 100%;
     line-height: 1;
 }
 
@@ -63,12 +63,14 @@ table {
     border-spacing: 0;
 }
 
+
+
+
 *:focus {
 	outline: none;
 }
 
-// outline none
-textarea:focus,
+
 input:focus {
     outline: none;
 }

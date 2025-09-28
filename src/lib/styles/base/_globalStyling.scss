@@ -1,46 +1,54 @@
-
 /* MY CUSTOM RESET */
 *,
 *::before,
 *::after {
-    color:$clr-font-200;
+    color: $clr-font-200;
     box-sizing: border-box;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-/* min body height */
-/* dark mode user-agent-styles */
-/* improves punctuation in supported browsers */
-html {
-    hanging-punctuation: first last;
-    // color-scheme:;
-    
-}
 // for people with vestibular disorders (animation can cause them discomfort)
 @media (prefers-reduced-motion: no-preference) {
+
     html,
     :has(:target) {
         scroll-behavior: smooth;
     }
 }
 
-/* Improved heading in supported browsers */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-wrap: balance;
+@supports (hanging-punctuation: first) {
+    p {
+        hanging-punctuation: first;
+    }
+}
+
+@supports (text-wrap: balance) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: balance;
+    }
+}
+
+@supports (text-wrap: pretty) {
+    p,
+    ul,
+    li {
+        text-wrap: pretty;
+    }
 }
 
 /* improve readability with max-width on paragraphs and lists */
 /* prevent orphans in supported browsers */
-p {
+p,
+ul,
+li {
     max-width: 75ch;
-    text-wrap: pretty;
 }
 
 /* responsive images/videos */
@@ -51,7 +59,8 @@ video {
     display: block;
     max-width: 100%;
 }
-image{
+
+image {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
@@ -63,7 +72,7 @@ image{
 
 
 body {
-    background-image: url(/src/assets/images/seamless_paper_texture.png);
+
     // Mobile-specific styles
     @media (max-width: var(--mobile-max)) {}
 
