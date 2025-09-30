@@ -54,20 +54,16 @@
   // @include font-face("Caveat", "Caveat/static/Caveat-Regular");
   // @include font-face("Mansalva", "Mansalva/Mansalva-Regular");
   // @include font-face("Mynerve", "Mynerve/Mynerve-Regular");
-  // @include font-face("LoL", "LoL/BeaufortforLOL-Medium");
-  // @include font-face("LifeCraft", "LifeCraft_font/LifeCraft_Font");
-  // @include font-face("horizon-font", "horizon-font/Horizon-nMeM");
-  // @include font-face(
-  //   "CatFont",
-  //   "CatFont/OrientalCatsLight",
-  //   normal,
-  //   "opentype"
-  // );
+@include font-face('CatFont', 'CatFont/OrientalCatsLight',normal, 'opentype');
+@include font-face('LoL', 'LoL/BeaufortforLOL-Medium');
+@include font-face('LifeCraft', 'LifeCraft_font/LifeCraft_Font');
+@include font-face('horizon-font', 'horizon-font/Horizon-nMeM');
+
 
   $icons-size: 35px;
  
   section {
-    @include doodleBorder(1);
+    @include doodleElement(1,1);
     & {
       filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
       display: flex;

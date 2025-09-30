@@ -63,6 +63,10 @@ let devEcosystem = mapSkills([
   
 </script>
 
+
+<!--
+ MARK: Style
+-->  
 <style lang="scss">
   @include font-face('GloriaHallelujah', 'Gloria_Hallelujah/GloriaHallelujah-Regular');
   @include font-face('Caveat', 'Caveat/static/Caveat-Regular');
@@ -71,18 +75,22 @@ let devEcosystem = mapSkills([
   
   
   .containerSkills{
-    @include doodleBorder(1);
+    // @include doodleBorder(1);
+    @include doodleElement(1,1);
     &{
-      margin-inline:calc($indent * 3);
+      min-width: min-content;
+      margin-inline:$indent;
       filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     }
   }
   .skillsHeadingWrapper{
     
-    @include doodleBorder(2);
+    // @include doodleBorder(2);
+    @include doodleElement(1,1);
     @import '../styles/base/tapeSection';
     @import '../styles/base/foldpaper';
     &{
+      min-width: min-content;
       position: relative;
       padding-block: 1rem;
       text-align: center;
@@ -90,14 +98,18 @@ let devEcosystem = mapSkills([
     }
   }
   .container-column-3{
-    margin  : 3rem;
+    margin: 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    // justify-content: space-between;
-    // display: flex;
-    // flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem; 
     
-    h2{
+  @container (max-width: 600px) {
+    grid-template-columns: 1fr;
+    margin: 0.5rem;
+  }
+  
+  h2{
+      font-weight: bolder;
       font-size: $font-size-xl;
     }
     
@@ -109,6 +121,8 @@ let devEcosystem = mapSkills([
       h2{
         line-height: 5rem;
         font-family: 'Caveat';  
+        word-wrap: break-word;
+        font-size: $font-size-lg;
       }
         
       }
@@ -120,7 +134,9 @@ let devEcosystem = mapSkills([
     
     </style>
 
-<!-- HTML -->
+<!--
+ MARK: HTML
+-->  
 <section id="skills" class="containerSkills">
   <div class="skillsHeadingWrapper">
     <div class="tape-effect"></div>

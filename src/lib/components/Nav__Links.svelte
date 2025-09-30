@@ -1,3 +1,4 @@
+
 <script lang="ts">
   export let navLinks: Array<{
     text: string;
@@ -11,117 +12,167 @@
     if (isOpen) {
       isOpen = false;
     }
-    // Better navigation than setting window.location
     window.location.assign(location);
   }
 </script>
 
-<style lang="scss">
-  // @include font-face('Shadows into Light', 'Shadows_Into_Light/ShadowsIntoLight-Regular');
-
-  .nav-links-container {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-
-    .links {
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-  }
-
-  /* Mobile styles */
-  @container mainnav (max-width: 768px) {
-    .nav-links-container {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      margin-top: 1rem;
-
-      &.mobile-open {
-        display: flex;
-      }
-
-      .links {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.5rem;
-      }
-    }
-  }
-
-  /* Doodle button styles */
-  .nav-link {
-    position: relative;
-    min-width: 50px;
-    font-size: $font-size-xxl;
-    font-family: 'Shadows into Light';
-    padding: 0.75rem 1.5rem;
-    color: $clr-font-200;
-    text-decoration: none;
-    background: $backgroundPrimary;
-    border: none;
-    cursor: pointer;
-    transition: all 235ms ease;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 3px solid var(--primary, hsla(40, 2%, 25%, 1));
-      pointer-events: none;
-      filter: drop-shadow(3px 3px 2px hsla(0, 0%, 0%, 0.6));
-    }
-
-    &:nth-child(1)::after {
-      border-radius: 1% 5% 11% 56% / 25% 2% 11% 1%;
-      transform: rotate(0.5deg);
-    }
-    &:nth-child(2)::after {
-      border-radius: 75% 50% 4% 70% / 6% 4% 7% 5%;
-      transform: rotate(0.25deg);
-    }
-    &:nth-child(3)::after {
-      border-radius: 132% 117% 5% 130% / 7% 8% 115% 6%;
-      transform: rotate(-0.5deg);
-    }
-    &:nth-child(4)::after {
-      border-radius: 68% 40% 6% 75% / 7% 6% 60% 6%;
-      transform: rotate(-0.25deg);
-    }
-
-    &:hover {
-      animation: shake 1s infinite;
-    }
-  }
-
-  @keyframes shake {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(1deg); }
-    50% { transform: rotate(-1deg); }
-    75% { transform: rotate(1deg); }
-    100% { transform: rotate(0deg); }
-  }
-</style>
-
-<div class="nav-links-container" class:mobile-open={isOpen}>
-  <ul class="links">
+<div class="nav__links" class:nav__links--mobile-open={isOpen}>
+  <ul class="nav__list">
     {#each navLinks as { text, location, className }}
-      <li>
+      <li class="nav__item {className}">
         <a
+          class="nav__link"
           href={location}
-          class="nav-link {className}"
           on:click|preventDefault={() => closeNavAndNavigate(location)}
-        >
-          {text}
+          >
+          <span class="nav__link-text">{text}</span>
         </a>
       </li>
     {/each}
   </ul>
 </div>
+
+<style lang="scss">
+
+  /* ===== VARIABLES ===== */
+  $nav-link-padding: 0.75rem 1.5rem;
+  $nav-link-mobile-padding: 1rem 1.5rem;
+  $nav-desktop-gap: 2rem;
+  $nav-mobile-gap: 0.5rem;
+  $nav-margin-top: 2rem;
+  
+  /* ===== BASE COMPONENT STRUCTURE ===== */
+  .nav__links {
+      margin-top: -$nav-margin-top;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav__list {
+    outline: auto;
+    display: flex;
+    gap: $nav-desktop-gap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include doodleElement(3);
+    // align-items: center;
+    justify-content: center;
+  }
+  
+  /* ===== NAV LINK STYLES ===== */
+  .nav__link {
+    
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: $nav-link-padding;
+    font-size: $font-size-xxl;
+    font-family: "Shadows into Light";
+    color: $clr-font-200;
+    text-decoration: none;
+    
+    // Visual Styles
+    background: $backgroundPrimary;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  /* ===== INTERACTION STATES ===== */
+  .nav__item {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    &:focus-within {
+      // outline: 2px solid $lightGray;
+      // outline-offset: 1px;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+      transition: transform 0.1s ease;
+    }
+  }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  
+  /* Mobile Styles */
+  @container mainnav (max-width: 500px) {
+    .nav__links {
+      
+      margin-top: calc(#{$nav-margin-top} / 2);
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      order: 2;
+      &.nav__links--mobile-open {
+        display: flex;
+        
+        .nav__list {
+          flex-direction: column;
+          width: 100%;
+          gap: $nav-mobile-gap;
+          align-items: stretch;
+        }
+        
+        .nav__item {
+          width: 100%;
+          display: flex;
+        }
+        
+        .nav__link {
+          width: 100%;
+          padding: $nav-link-mobile-padding;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  /* Desktop Styles */
+  @container mainnav (min-width: 769px) {
+    .nav__links {
+      display: flex;
+    }
+  }
+
+  /* Tablet Styles */
+  @container mainnav (max-width: 768px) and (min-width: 501px) {
+    .nav__list {
+      gap: 1.5rem; // Add some gap for tablets
+    }
+    
+    .nav__link {
+      padding: 0.75rem 1.25rem;
+      font-size: $font-size-xl;
+    }
+  }
+
+  /* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .nav__link {
+      animation: none;
+      transition: none;
+      
+      &:hover {
+        animation: none;
+        transform: none;
+      }
+
+      &:focus {
+        transform: none;
+      }
+
+      &:active {
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+</style>

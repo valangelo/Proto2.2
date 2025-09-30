@@ -46,7 +46,8 @@
 @import "../styles/base/mixins";
 @include font-face("Neucha", "Neucha/Neucha-Regular");
 .dialog {
-  @include doodleBorder(2);
+  // @include doodleBorder(2);
+  @include doodleElement(1,1);
   & {
   font-size: $font-size-md;
   font-family: "Neucha";
@@ -95,7 +96,8 @@
     gap: 1rem;
 
     button {
-      @include doodleButton(1);
+      // @include doodleButton(1);
+      @include doodleElement(1,1);
       &{
         padding: 0.5rem 1.25rem;
         border-radius: 0.5rem;

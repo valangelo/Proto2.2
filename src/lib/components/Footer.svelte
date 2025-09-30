@@ -36,7 +36,8 @@
 
 
 footer {
-    @include doodleBorder;
+    // @include doodleBorder;
+    @include doodleElement(1,1);
     & {
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     display: grid;
@@ -102,7 +103,8 @@ footer {
             font-size: $font-size-md
         }
         input,textarea{
-            @include doodleButton(false);
+            // @include doodleButton(false);
+            @include doodleElement(1,1);
             &{
                 font-family: "Neucha";
                 font-size: $font-size-md
@@ -110,7 +112,8 @@ footer {
         }
     }
     .submit-button{
-        @include doodleButton(false);
+        // @include doodleButton(false);
+        @include doodleElement(1,1);
         &{
             vertical-align: center  ;
             font-size: larger;

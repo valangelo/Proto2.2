@@ -4,29 +4,33 @@ $font-path: "$lib/assets/fonts/";
 
 // Define a mixin for @font-face rules
 @mixin font-face($family, $file, $weight: normal, $format: 'truetype') {
-  @font-face {
-    font-family: '#{$family}';
-    @if $format == 'truetype' {
-      src: url('#{$font-path}#{$file}.ttf') format('truetype');
-    } @else if $format == 'opentype' {
-      src: url('#{$font-path}#{$file}.otf') format('opentype');
-    } @else if $format == 'both' {
-      src: url('#{$font-path}#{$file}.ttf') format('truetype'),
-           url('#{$font-path}#{$file}.otf') format('opentype');
-    }
-    font-weight: $weight;
-    font-style: normal;
+@font-face {
+  font-family: '#{$family}';
+  @if $format == 'truetype' {
+    src: url('#{$font-path}#{$file}.ttf') format('truetype');
+  } @else if $format == 'opentype' {
+    src: url('#{$font-path}#{$file}.otf') format('opentype');
+  } @else if $format == 'both' {
+    src: url('#{$font-path}#{$file}.ttf') format('truetype'),
+          url('#{$font-path}#{$file}.otf') format('opentype');
   }
+  font-weight: $weight;
+  font-style: normal;
+}
 }
 // Define a mixin for font styles
 @mixin font-style($family, $weight: normal) {
-  font-family: '#{$family}', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; // System fonts as fallback
-  font-weight: $weight;
+font-family: '#{$family}', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; // System fonts as fallback
+font-weight: $weight;
 }
 // // Define @font-face rules using the mixin
 @include font-face('Caveat', 'Caveat/static/Caveat-Regular');
 @include font-face('Caveat', 'Caveat/static/Caveat-Medium', 500);
+
 @include font-face('Shadows into Light', 'Shadows_Into_Light/ShadowsIntoLight-Regular');
+
+
+
 
 
 // @include font-face('Neucha', 'Neucha/Neucha-Regular');
@@ -44,12 +48,6 @@ $font-path: "$lib/assets/fonts/";
 // @include font-face('Atlandsketches', 'atlandsketches-bb/atlandsketchesbb_reg');
 // @include font-face('Freeride', 'Freeride/Freeride',normal, 'opentype');
 // @include font-face('TheUnseen', 'TheUnseen/heUnseen');
-// @include font-face('LoL', 'LoL/BeaufortforLOTL-Medium');
-// @include font-face('LifeCraft', 'LifeCraft_font/LifeCraft_Font');
-// @include font-face('horizon-font', 'horizon-font/Horizon-nMeM');
-// @include font-face('CatFont', 'CatFont/OrientalCatsLight',normal, 'opentype');
-
-
 
 
 

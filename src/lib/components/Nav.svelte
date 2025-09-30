@@ -20,32 +20,41 @@
 
 <style lang="scss">
   nav {
-    width: 95%;
+    width:50dvw;
+    min-width: 5rem;
     margin: auto;
     display: flex;
+    flex-direction:column;
     justify-content: space-between;
     align-items: center;
-    // padding: 1rem 0;
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     container: mainnav / inline-size;
-    @include doodleBorder(1);
-
+    @include doodleElement(2,1);
   }
 
+  /* Fix container query - remove the nested nav selector */
   @container mainnav (max-width: 768px) {
     nav {
+      flex-direction: column; /* Add this */
       flex-wrap: wrap;
+      
+      /* Center the branding wrapper on mobile */
+      > .branding-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 </style>
-<!-- on:click={toggleNav} -->
 
 <nav>
   <div
-  role="button"
-  tabindex="0"
-  on:click={toggleNav}
-  on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggleNav()}
+    role="button"
+    tabindex="0"
+    on:click={toggleNav}
+    on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggleNav()}
+    class="branding-wrapper"
   >
     <Nav__Branding {isOpen} {logoUrl} {brandingText} />
   </div>

@@ -186,7 +186,8 @@ div.projects
   @include font-face("Neucha", "Neucha/Neucha-Regular");
 
   .projects {
-    @include doodleBorder(1);
+    // @include doodleBorder(1);
+    @include doodleElement(1,1);
     & {
       margin-inline: calc($indent * 3);
       display: flex;
@@ -197,7 +198,8 @@ div.projects
 
   .projects-header {
     @import "../styles/base/tapeSection";
-    @include doodleBorder(2);
+    // @include doodleBorder(2);
+    @include doodleElement(1,1);
     @import "../styles/base/foldpaper";
     & {
       position: relative;
@@ -220,7 +222,8 @@ div.projects
       [title-end description-start]auto
       [end];
     gap: 1rem;
-    @include doodleBorder(1);
+    // @include doodleBorder(1);
+    @include doodleElement(1,1);
 
     /////////////////
     // region ::project-card
@@ -244,7 +247,8 @@ div.projects
     } //!project-thumbnail
 
     button {
-      @include doodleButton(1);
+      // @include doodleButton(1);
+      @include doodleElement(1,1);
       & {
         // width: 100%;
         // grid-row: title-start/title-end;
