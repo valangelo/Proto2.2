@@ -29,7 +29,7 @@
     align-items: center;
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
     container: mainnav / inline-size;
-    @include doodleElement(2,1);
+    @include doodleElement(1,1);
   }
 
   /* Fix container query - remove the nested nav selector */

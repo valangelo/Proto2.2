@@ -38,7 +38,7 @@
 
     {
       id: "gawarangDialog",
-      title: "Gawaranggggggggggggggggg",
+      title: "Gawarang",
       image: Gawarang,
       background: GawarangBG,
       url: "https://proto2-2.vercel.app/",
@@ -118,38 +118,51 @@ This led me to develop a persona named "Proto" to serve as my voice. With a focu
 
 #NOTE
 
--->
-<div id="projects" class="projects">
-  <div class="projects__header">
+- Structure:
+div.projects
+        ├── div.projects-header
+        │     ├── div.tape-effect
+        │     ├── h2
+        │     └── div.tape-effect
+        └── div.projects-grid
+              └── div.project-card
+                    ├── div.containerPreview
+                    ├── button.cardheading
+                    └── div.cardDescription
 
-    <h2 class="projects__title">Projects</h2>
+-->
+
+<div id="projects" class="projects">
+  <div class="projects-header">
+    <div class="tape-effect" />
+    <h2>Projects</h2>
+    <div class="tape-effect" />
   </div>
 
-  <div class="projects__list">
+  <div class="projects-grid">
     {#each projects as project (project.id)}
-      <article class="project-card project-card--wip">
-        <img
-          class="project-card__preview"
-          src={project.image}
-          alt={project.id}>
+      <div class="project-card workinprogress">
+        <div
+          class="containerPreview"
+          style="background-image:url({project.image})"
+        />
         <button
-          class="project-card__button"
+          class="cardheading"
           data-dialog-id={project.id}
           on:click={() => openDialog(project.id, project.background)}
           aria-controls={project.id}
         >
           {project.title}
         </button>
-        <div class="project-card__description">
+
+        <div class="cardDescription">
           {project.description}
         </div>
-      </article>
+      </div>
     {/each}
   </div>
 </div>
-<!-- 
-MARK:-Dialog
- -->
+
 {#each projects as project (project.id)}
   <Dialog
     bind:this={dialogs[project.id]}
@@ -161,173 +174,142 @@ MARK:-Dialog
     backstory={project.backstory}
   />
 {/each}
+
 <!--
 *********************************
           MARK: STLYE
 *********************************
 -->
+
 <style lang="scss">
   @include font-face("Neucha", "Neucha/Neucha-Regular");
-  @import "../styles/base/tapeSection";
-  @import "../styles/base/foldpaper";
 
-  // ========================
-  // region: Projects 
-  // ========================
   .projects {
     @include doodleElement(1, 1);
-    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+    & {
+      width: 100%;
+      filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+    }
   }
 
-  // ========================
-  // region: Projects Header
-  // ========================
-  .projects__header {
-    @include doodleElement(1, 2);
-    @extend %foldpaper-effect;
-    position: relative;
-    padding-block: 1rem;
-    text-align: center;
-  }
-  .projects__title {
-    @extend %tape-section !optional;
-  }
-  // ========================
-  // region: Projects list
-  // ========================
-  .projects__list {
+  .projects-header {
+    @import "../styles/base/tapeSection";
+    @include doodleElement(1, 3);
+    @import "../styles/base/foldpaper";
+    & {
+      position: relative;
+      padding-block: 1rem;
+      text-align: center;
+    } //!header &
+  } //!header
+
+  .projects-grid {
+    @include doodleElement(1, 3);
+    container-type: inline-size;
+    // min-height: max-content;
     margin-block-start: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    @include doodleElement(1, 3);
-  }
-
-  // region: Project Card
-  .project-card {
-    display: flex;
-    flex-direction: column;
-    width: calc(25% - 1.5rem);
-    min-width: 280px;
-    padding: 1.5rem;
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:
+      [start]400px
+      [image-end title-start]auto
+      [title-end description-start]auto
+      [end];
     gap: 1rem;
-    @include doodleElement(3, 2);
-  }
+    // @include doodleBorder(1);
 
-  // region: Project preview
-  .project-card__preview {//thumbnail
-    transition: background-size 0.5s ease-in-out, filter 0.5s ease-in-out;
-    margin-inline: auto;
-    width: 100%;
-    max-width: 200px;
-    aspect-ratio: 1;
-    background-size: contain;
-    background-repeat: no-repeat;
+    /////////////////
+    // region ::project-card
+    /////////////////
+    .project-card {
+      // outline: auto
+      @include doodleElement(1);
+      display: grid;
+      grid-column: auto;
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+      padding: 2rem;
+      @media (width > $spacing-responsive-lg) {
+        // outline: 1px red solid;
+        display: block;
+      }
+
+    } //!project-thumbnail
+
+    button {
+      @include doodleElement(1, 1);
+      & {
+        // width: 100%;
+        // grid-row: title-start/title-end;
+        // grid-column: 1/-1;
+        // text-align: center;
+        font-size: $font-size-xl;
+      } //!&
+    } //!h2
+
+    .containerPreview {
+      @include doodleElement(2);
+      & {
+        transition:
+          background-size 0.5s ease-in-out,
+          filter 0.5s ease-in-out;
+        margin-inline: auto;
+        min-width: calc($spacing-responsive-lg * 5);
+        aspect-ratio: 1;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+      }
+    } //!&
+    .cardheading {
+      width: 100%;
+      background-color: $backgroundPrimary;
+    }
+    .cardDescription {
+      // grid-row: description-start/end;
+      // grid-column: 1/-1;
+      font-family: "Neucha";
+      font-size: $font-size-md;
+      // grid-row: 3 / 4; // Stays below the title
+    } //!cardDescription
+  } //!card
+
+  ::backdrop {
+    background-image: var(--backdrop-image);
+    background-blend-mode: overlay;
     background-position: center;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(20px);
+    opacity: .9;
   }
 
-  .project-card__button {
-    @include doodleElement(1, 3);
-    width: 100%;
-    font-size: $font-size-xl;
-    background-color: $backgroundPrimary;
-    cursor: pointer;
-    padding: 0.75rem;
-    flex-shrink: 0;
-    
-    
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  
-  }
-
-  .project-card__description {
-    max-height: 10ch;
-    font-family: "Neucha";
-    font-size: $font-size-md;
-    line-height: 1.5;
-    flex: 1;
-    
-    
-    display: -webkit-box;
-    line-clamp: 4;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow:ellipsis;
-  
-  /* Fallback for non-webkit browsers */
-  max-height: 10em;                 /* Approximate 4 lines height */
-  }
-
-  // ========================
-  // region: Work in Progress
-  // ========================
-  .project-card--wip {
+  .workinprogress {
     position: relative;
-    
     &::after {
-
       outline: 3px solid #00000023;
       transform-origin: center;
       content: "Work in Progress";
       position: absolute;
       z-index: 11;
       text-align: center;
-      font-size: clamp(1rem, 2vw, 2rem); /* Smaller font */
+      font-size: clamp(1.5rem, 2.5vw, 4rem);
       color: #000;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.85);
       border-radius: 50%;
-      border: 3px gray solid;
+      border: 5px gray solid;
       filter: drop-shadow(2px 2px 4px rgb(39, 39, 39));
       aspect-ratio: 1/1;
       transform: rotate(340deg);
-      inset: 0.5rem;
+      inset: 1rem;
       margin: auto;
       display: flex;
       align-items: center;
-      justify-content: center;
+      // justify-content: center;
       pointer-events: none;
-      padding: 1rem;
-      box-sizing: border-box;
-      
     }
-  }
-
-
-  @media (max-width: 1200px) {
-    .project-card {
-      width: calc(33.333% - 1.5rem);
-    }
-  }
-
-  @media (max-width: 900px) {
-    .project-card {
-      width: calc(95% - 1rem);
-    }
-
-     .project-card--wip::after {
-    inset: 20%;
-     }
-  }
-
-  @media (max-width: 600px) {
-    .project-card {
-      width: 100%;
-    }
-    .project-card--wip::after{
-      inset: 10%;
-    }
-  }
-
-  // ========================
-  // Dialog Backdrop
-  // ========================
-  ::backdrop {
-    backdrop-filter: blur(20px);
   }
 </style>

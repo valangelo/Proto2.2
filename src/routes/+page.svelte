@@ -9,6 +9,8 @@
 </script>
 
 <style lang="scss">
+    	$section-width:80dvw;
+
     .fakeHtmlContainer {
         @include highlightTags('html', 0);
     }
@@ -17,32 +19,34 @@
         @include highlightTags('body', 1);
     }
     
-    .nav, .hero, .about, .skills, .projects {
+    .nav, .hero, .about, .skills, .projects,.footer {
         place-items: center;
+        max-width: $section-width;
+        margin-inline: auto;
+    //  outline: auto;
     }
-    
     .nav {
-        @include highlightTags('nav', 3);
+        
+        @include highlightTags('nav', 0);
     }
     
     .hero {
-        @include highlightTags("hero", 2);
+        @include highlightTags("hero", 0);
     }
     
     .about {
-        @include highlightTags("about", 2);
+        @include highlightTags("about", 0);
     }
     
     .skills {
-        @include highlightTags("skills", 2);
+        @include highlightTags("skills", 0);
     }
     
     .projects {
-        @include highlightTags("projects", 2);
+        @include highlightTags("projects", 0);
     }
-    
     .footer {
-        @include highlightTags('footer', 2);
+        @include highlightTags('footer', 0);
     }
 </style>
 

@@ -1,66 +1,67 @@
-&{
-  h2{
-    font-family: "GloriaHallelujah";
-    font-size: $font-size-xl;
-  }
-  .tape-effect {
+
+%accent-tape {
+  outline: auto;
+  font-family: "GloriaHallelujah";
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bolder;
+  //MARK: Variables
+  $tape: #dbd8be;
+  $tape-edge: #666;
+  $tape-offsetX: -5vmin;
+  $tape-offsetY: -2vmin;
+  $tape-rotate: 45deg;
+
   position: absolute;
+  justify-content: center;
   width: 100%;
+
+  // ───────────────
+  //MARK: BASE PSEUDOS
+  // ───────────────
+  &::before,
+  &::after {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    place-items: center;
+    content: "VAV";
+    width: 10vmin;
+    height: 3vmin;
+    background-color: $tape;
+    opacity: 0.7;
+    border-right: 1px dotted $tape-edge;
+    border-left: 1px dotted $tape-edge;
+    filter: drop-shadow(0px 0px 1px hsl(0, 0%, 0%));
+    color: rgba(0, 0, 0, 0.08);
+    bottom: $tape-offsetY; // shared bottom offset
   }
-  .tape-effect:first-of-type {
-  top: 0;
+  // ───────────────
+  //MARK: TOP STRIP
+  // ───────────────
+  &:first-of-type {
+    top: 0;
+    &::before {//left
+      left: $tape-offsetX;
+      transform: rotate(-$tape-rotate);
+    }
+    &::after {//right
+      right: $tape-offsetX;
+      transform: rotate($tape-rotate);
+    }
   }
-  .tape-effect:last-of-type {
-  bottom: 0;
+
+  // ───────────────
+  //MARK: BOTTOM STRIP
+  // ───────────────
+  &:last-of-type {
+    bottom: 0;
+    &::before {//left
+      left: $tape-offsetX;
+      transform: rotate($tape-rotate);
+    }
+    &::after {//right
+      right: $tape-offsetX;
+      transform: rotate(-$tape-rotate);
+    }
   }
 }
-
-$tape: #dbd8be;
-$tape-edge: #666;
-$tape-offsetX:-5vmin;
-$tape-offsetY:-2vmin;
-$tape-rotate:(45deg);
-.tape-effect {
-  justify-content: center;
-  position: absolute;
-}
-.tape-effect::before,
-.tape-effect::after {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  place-items: center;
-  content: "VAV";
-  width: 10vmin;
-  height: 3vmin;
-  position: absolute;
-  background-color: $tape;
-  opacity: 0.7;
-  border-right: 1px dotted $tape-edge;
-  border-left: 1px dotted $tape-edge;
-  filter: drop-shadow(0px 0px 1px hsl(0, 0%, 0%));
-  color: rgba(0, 0, 0, 0.08); 
-}
-
-.tape-effect:first-of-type::before {
-  transform: rotate(-$tape-rotate);
-  left: $tape-offsetX;
-  bottom: $tape-offsetY;
-}
-
-.tape-effect:first-of-type::after {
-  transform: rotate($tape-rotate);
-  right:$tape-offsetX;
-  bottom: $tape-offsetY;
-}  
-.tape-effect:last-of-type::before {
-  transform: rotate($tape-rotate);
-  left:$tape-offsetX;
-  bottom: $tape-offsetY;
-}
-
-.tape-effect:last-of-type::after {
-  transform: rotate(-$tape-rotate);
-right:$tape-offsetX;
-bottom: $tape-offsetY;
-}  

@@ -47,19 +47,19 @@
 @include font-face("Neucha", "Neucha/Neucha-Regular");
 .dialog {
   // @include doodleBorder(2);
-  @include doodleElement(1,1);
+  @include doodleElement(2,2);
   & {
   font-size: $font-size-md;
   font-family: "Neucha";
-  color: inherit;
+  // color: red;
   position: fixed;
   inset: 0;
   margin: auto;
   max-width: 700px;
   width: 90%;
   padding: 2rem;
-  border: none;
-  border-radius: 1rem;
+  // border: none;
+  // border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -97,18 +97,15 @@
 
     button {
       // @include doodleButton(1);
-      @include doodleElement(1,1);
+      @include doodleElement(2);
       &{
         padding: 0.5rem 1.25rem;
-        border-radius: 0.5rem;
-        border: 1px solid #444;
-        background: #f9f9f9;
         cursor: pointer;
         transition: transform 0.2s ease, background-color 0.2s ease;
       }
 
       &:hover {
-        background-color: #eee;
+        // background-color: #eee;
         transform: translateY(-2px);
       }
     }

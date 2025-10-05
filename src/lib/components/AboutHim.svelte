@@ -1,9 +1,14 @@
-<script>
+<!--
+MARK: Script
+-->
+<script lang="ts">
   import valiw from '$lib/assets/images/valiw.webp';
 </script>
-
-<section id="about" class="containerAboutHim">
-  <div>
+<!--
+MARK: Html
+ -->
+<section id="about" class="abouthim">
+  <div class="left">
     <h2>Greetings, Earthlings!</h2>
     <h3>Meet the one and only: <span>Angelo!</span></h3>
     <h4>Primary Functions</h4>
@@ -48,7 +53,9 @@
     <img src={valiw} alt="Valiw" />
   </div>
 </section>
-
+<!-- 
+MARK: Style
+-->
 <style lang="scss">
   // @include font-face("Neucha", "Neucha/Neucha-Regular");
   // @include font-face("Caveat", "Caveat/static/Caveat-Regular");
@@ -62,7 +69,7 @@
 
   $icons-size: 35px;
  
-  section {
+  .abouthim {
     @include doodleElement(1,1);
     & {
       filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
@@ -70,7 +77,6 @@
       font-family: "Neucha";
       font-size: $font-size-md;
       line-height: 2rem;
-      margin-inline: calc($indent * 2);
       padding: 1.5rem;
       justify-content: space-between;
       gap: 2rem;
@@ -80,10 +86,7 @@
         flex-direction: column-reverse;
         align-items: center;
         // text-align: center;
-        .valiw img {
-          width: 45dvw;
-        }
-
+        
         ul {
           padding-left: 2em;
           padding-left: 1.5em;
@@ -96,14 +99,20 @@
       }
     }
   }
+  
   span {
     filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.2));
+    
   }
   .valiw img {
-    width: 20rem;
-    animation: float 7s ease-in-out infinite;
+      max-width: 25dvw;
+      animation: float 7s ease-in-out infinite;
+      
+    
   }
+  
   h2 {
+    
     line-height: $spacing-xxl;
     font-size: $font-size-xxl;
     font-weight: $font-weight-bold;
@@ -121,12 +130,13 @@
   }
   ul {
     line-height: $spacing-xl;
-    padding-left: 2em;
+    padding-left: 1em;
   }
   li {
-    // padding-left: 2rem;
+    padding-left: 1rem;
     list-style: circle;
-    // display: list-item; // ensures bullet shows
+    display: list-item; // ensures bullet shows
+    text-wrap: stable;
   }
 
   .vs {

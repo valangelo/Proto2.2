@@ -48,36 +48,32 @@
   }
   
   .nav__list {
-    outline: auto;
+    // outline: auto;
     display: flex;
     gap: $nav-desktop-gap;
     margin: 0;
     padding: 0;
     list-style: none;
-    @include doodleElement(3);
-    // align-items: center;
     justify-content: center;
+    
+
+    // align-items: center;
   }
   
   /* ===== NAV LINK STYLES ===== */
   .nav__link {
-    
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 60px;
+    min-width: 65px;
     padding: $nav-link-padding;
-    font-size: $font-size-xxl;
+    font-size: $font-size-lg;
     font-family: "Shadows into Light";
-    color: $clr-font-200;
+    // color: $clr-font-200;
     text-decoration: none;
-    
-    // Visual Styles
-    background: $backgroundPrimary;
-    border: none;
     cursor: pointer;
-    
+    @include doodleElement(3,3);
   }
   
   /* ===== INTERACTION STATES ===== */

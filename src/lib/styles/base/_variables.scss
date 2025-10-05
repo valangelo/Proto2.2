@@ -1,15 +1,16 @@
 
 
 // _variables.scss
-	
 
-$asset-path: "$lib/assets/images/";// Asset Paths
+$asset-path: "$lib/assets/images/"; // Asset Paths
+
+// Fixed variables:
 $image-border: url("#{$asset-path}border.svg") 10 stretch;
 $image-button: url("#{$asset-path}button.svg") 10 10 10 10 stretch stretch;
 $image-pin: url("#{$asset-path}pinnormal.png");
-$image-background: url("#{$asset-path}seamless_paper_texture.png"); 
+$image-background-crumpled: url("#{$asset-path}paper-texture-filter-by-kelan.png");
+$image-background-textured: url("#{$asset-path}seamless_paper_texture.png");
 $ruler: url("#{$asset-path}ruler.svg");
-$image-background-crumpled-paper: url("#{$asset-path}kelan-Paper-texture-filter.svg");
 	// https://github.com/argyleink/open-props
 
 
@@ -68,7 +69,7 @@ $border-style:solid 5px;
 $border-radius:10px;
 $border-width:10px;
 
-$indent : 3ch;
+
 // body {
 // 	font-family: 'Nuecha';
 //   }

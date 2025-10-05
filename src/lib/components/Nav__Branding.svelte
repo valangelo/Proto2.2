@@ -14,7 +14,7 @@
   padding: 0.5rem 1rem;
   min-width: fit-content;
   
-  @include doodleElement(1, 3);
+  @include doodleElement(3,3);
   
   img {
     width: 5rem;
@@ -31,7 +31,7 @@
 }
 
 /* Only apply rotation when container is mobile AND isOpen is true */
-.nav__branding.open img {
+.nav--open img {
   /* Default: no rotation */
   transform: rotate(0deg);
   
@@ -58,13 +58,13 @@
   }
   
   @container mainnav (min-width: 501px) {
-    cursor: default;
+    
   }
 }
 </style>
 
 <button
-  class="nav__branding {isOpen ? 'open' : ''}"
+  class="nav__branding {isOpen ? 'nav--open' : ''}"
   on:click
 >
   {#if logoUrl}

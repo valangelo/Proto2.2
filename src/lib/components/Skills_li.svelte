@@ -17,9 +17,9 @@
 <style lang="scss">
   li {
     position: relative;
-    padding-left: 40px;
-    margin-bottom: 10px;
-    list-style-type: none;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  list-style-type: none;
   }
 
   li::before {
